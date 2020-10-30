@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 
-public class Materia1 extends Activity {
+public class Materia1Activity extends Activity {
 	private String tag = "AppConoceme";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.d(tag, "Inicia metodo en AcercaDeActivity.onCreate");
+		Log.d(tag, "Inicia metodo en Materia1Activity.onCreate");
 	//	int entero = Integer.parseInt("n");
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_acerca_de);
+		setContentView(R.layout.activity_materia1);
 	}
 
 	@Override
