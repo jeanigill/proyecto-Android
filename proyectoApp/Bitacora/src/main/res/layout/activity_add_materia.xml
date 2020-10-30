@@ -17,14 +17,30 @@
         android:onClick="lanzarVistaAcercaDe"
         android:src="@drawable/bitacora_logo" />
 
+    <EditText
+        android:id="@+id/nameMateria"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Nombre de la materia"
+        android:layout_below="@+id/imageView2"
+        android:inputType="text"/>
 
+
+    <EditText
+        android:id="@+id/fechaCreacion"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/nameMateria"
+        android:hint="Fecha"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:onClick="lanzarVistaAcercaDe"
         android:text="Guardar materia"
         app:backgroundTint="#2196F3" />
