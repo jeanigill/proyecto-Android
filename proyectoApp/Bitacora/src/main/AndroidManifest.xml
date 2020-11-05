@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
         </activity>
 
-        <activity android:name=".MenuPrincipalActivity">
+        <activity android:name=".activities.MenuPrincipalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AcercaDeActivity"> </activity>
+        <activity android:name=".activities.AcercaDeActivity"> </activity>
 
-        <activity android:name=".Materia1Activity"> </activity>
+        <activity android:name=".activities.Materia1Activity"> </activity>
 
-        <activity android:name=".AddMateriaActivity"> </activity>
+        <activity android:name=".activities.AddMateriaActivity"> </activity>
 
     </application>
 

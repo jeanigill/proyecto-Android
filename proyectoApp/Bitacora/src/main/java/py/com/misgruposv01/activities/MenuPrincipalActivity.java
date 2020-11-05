@@ -1,9 +1,14 @@
-package py.com.misgruposv01;
+package py.com.misgruposv01.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import py.com.misgruposv01.R;
+import py.com.misgruposv01.activities.AcercaDeActivity;
+import py.com.misgruposv01.activities.AddMateriaActivity;
+import py.com.misgruposv01.activities.Materia1Activity;
 
 public class MenuPrincipalActivity extends Activity {
 

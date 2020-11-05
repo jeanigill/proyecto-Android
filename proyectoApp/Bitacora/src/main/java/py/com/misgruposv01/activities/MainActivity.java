@@ -1,8 +1,10 @@
-package py.com.misgruposv01;
+package py.com.misgruposv01.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import py.com.misgruposv01.R;
 
 public class MainActivity extends AppCompatActivity {
 
