@@ -35,7 +35,7 @@ public class BitacorasListView extends ListActivity {
     protected void onListItemClick (ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
-        Intent i = new Intent(this, MenuPrincipalActivity.class);
+        Intent i = new Intent(this, MateriasListView.class);
         i.putExtra("idGrupo", Integer.parseInt(""+id));
         startActivity(i);
     }

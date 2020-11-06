@@ -101,6 +101,12 @@ public class App {
         temas2.add(tema4);
         temas3.add(tema5);
 
+        materia1 = new Materia (1, "Proyecto TIC", temas1);
+        materia2 = new Materia (2, "Materia 2", temas2);
+        materia3 = new Materia (3, "Materia 3", temas3);
+        materia4 = new Materia (4, "Materia 4", temas3);
+        materia5 = new Materia (5, "Materia 5", temas3);
+        materia6 = new Materia (6, "Materia 6", temas3);
 
         listadoMaterias1.add(materia1);
         listadoMaterias1.add(materia2);
