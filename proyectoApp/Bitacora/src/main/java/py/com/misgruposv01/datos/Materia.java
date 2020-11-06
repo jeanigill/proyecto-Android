@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Materia {
+    private int id;
     private String nombre;
     private ArrayList<Tema> temas;
 
@@ -20,7 +21,8 @@ public class Materia {
         this.nombre = nombre;
         temas = new ArrayList<>();
     }
-    public Materia(String nombre, ArrayList temas) {
+    public Materia(int id, String nombre, ArrayList temas) {
+        this.id = id;
         this.nombre = nombre;
         temas = temas;
     }
@@ -30,6 +32,15 @@ public class Materia {
 //    public static void agregarGrupo( Grupo unGrupo ) {
 //        grupos.add( unGrupo );
 //    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

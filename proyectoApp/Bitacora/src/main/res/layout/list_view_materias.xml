@@ -13,30 +13,12 @@
 	      android:gravity="center"
 	      android:textSize="29sp"
 	      android:layout_marginBottom="20dp"/>
-	
-	    <!-- Modo 1 -->
-	    <ListView
-	        android:id="@android:id/list"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@id/titulo_principal"/>
-	
-	    <!-- Modo 1 -->
-	<!--<TextView
-        android:id="@android:id/empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lista_vacia" />
 
-    <!- Modo 2 -->
-	    <!--ListView
+	    <ListView
 	        android:id="@+id/listTaxista"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@id/titulo_principal"/-->
-	    
-	    
-		    	    
+	        android:layout_below="@id/titulo_principal"/>
 
 	</RelativeLayout>
 

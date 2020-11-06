@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
 
-    <TextView
-        android:id="@+id/titulo_principal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/boton_acerca_de"
-        android:gravity="center"
-        android:textSize="29sp"
-        android:layout_marginBottom="20dp"/>
-
     <!-- Modo 1 -->
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titulo_principal"/>
 
     <!-- Modo 1 -->
     <!--<TextView
@@ -35,7 +20,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/titulo_principal"/-->
 
+    <TextView
+        android:id="@+id/titulo_principal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/boton_acerca_de"
+        android:textSize="29sp" />
 
-
-
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="551dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="65dp"/>
 </RelativeLayout>
