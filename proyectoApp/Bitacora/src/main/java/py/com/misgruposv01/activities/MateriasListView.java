@@ -26,12 +26,24 @@ public class MateriasListView extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_materias);
 
-        ArrayList<Materia> materias = App.listadoMaterias1;
-        Log.d(LogUtils.tag, "Materias: " + materias.size());
+        Bundle extras = getIntent().getExtras();
+        int idBitacora = 0;
+        if(extras != null){
+            idBitacora = extras.getInt("idBitacora", -1);
+            Log.i(LogUtils.tag, "Id recibido del grupo: "+idBitacora);
+        }
+
+        Bitacora unaBitacora;
+        
+        ArrayList<Materia> materias = unaBitacora.getMaterias();
+        Log.d(LogUtils.tag, "Cantidad de materias: " + materias.size());
 
         // Modo1
         setListAdapter(new MateriaAdaptador(this, materias));
     }
+
+    ///METODO PARA BUSCAR BITACORA
+
 
     @Override
     protected void onListItemClick (ListView l, View v, int position, long id) {

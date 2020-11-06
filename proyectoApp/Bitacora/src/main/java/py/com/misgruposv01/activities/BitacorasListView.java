@@ -25,7 +25,7 @@ public class BitacorasListView extends ListActivity {
         setContentView(R.layout.list_view_bitacoras);
 
         ArrayList<Bitacora> listadoBitacoras = App.listadoBitacoras;
-        Log.d(LogUtils.tag, "CantidadGrupos: " + listadoBitacoras.size());
+        Log.d(LogUtils.tag, "Cantidad de bitacoras: " + listadoBitacoras.size());
 
         // Modo1
         setListAdapter(new BitacoraAdaptador(this, listadoBitacoras));
@@ -36,7 +36,7 @@ public class BitacorasListView extends ListActivity {
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, MateriasListView.class);
-        i.putExtra("idGrupo", Integer.parseInt(""+id));
+        i.putExtra("idBitacora", Integer.parseInt(""+id));
         startActivity(i);
     }
 

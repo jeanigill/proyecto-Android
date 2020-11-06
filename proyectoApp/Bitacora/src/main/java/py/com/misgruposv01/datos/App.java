@@ -127,6 +127,7 @@ public class App {
     public App(    ) {
 
     }
+
 //
 //    public void agregarContato(Contacto contacto) {
 //        contactos.add( contacto );

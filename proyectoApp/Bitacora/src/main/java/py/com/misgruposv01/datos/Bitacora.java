@@ -13,6 +13,7 @@ public class Bitacora {
 //    }
 
     public Bitacora(int id, String anho, ArrayList materias) {
+        this.id = id;
         this.anho = anho;
         this.materias = materias;
     }
