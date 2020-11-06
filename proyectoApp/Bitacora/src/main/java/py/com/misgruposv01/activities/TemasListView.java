@@ -11,40 +11,41 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import py.com.misgruposv01.R;
-import py.com.misgruposv01.adaptadores.BitacoraAdaptador;
 import py.com.misgruposv01.adaptadores.MateriaAdaptador;
 import py.com.misgruposv01.datos.App;
 import py.com.misgruposv01.datos.Bitacora;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
-public class MateriasListView extends ListActivity {
+public class TemasListView extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_view_materias);
+        setContentView(R.layout.list_view_temas);
 
         Bundle extras = getIntent().getExtras();
-        int idBitacora = 0;
+        int idMateria = 0;
         if(extras != null){
-            idBitacora = extras.getInt("idBitacora", -1);
-            Log.i(LogUtils.tag, "Id recibido de la bitacora: "+idBitacora);
+            idMateria = extras.getInt("idMateria", -1);
+            Log.i(LogUtils.tag, "Id recibido de la materia: "+idMateria);
         }
+        Materia unaMateria;
+        ArrayList<Tema> temas = null;
 
         Bitacora unaBitacora;
         ArrayList<Materia> materias = null;
-        for (int i=0; i<App.listadoBitacoras.size(); i++){
-            unaBitacora = App.getListadoBitacoras().get(i);
+        for (int i=0; i<App.listadoBitacoras.get(unaBitacora)Bitacora.getMaterias().size(); i++){
+            unaMateria = App.getListadoBitacoras().get();
 
             if (idBitacora == unaBitacora.getId()){
 
                 materias = unaBitacora.getMaterias();
                 Log.i(LogUtils.tag, "Bitacora encontrada - id: "+idBitacora);
                 Log.i(LogUtils.tag, "Cantidad de materias: "+materias.size());
-//                Intent i = new Intent(this, MenuPrincipalActivity.class);
-//                i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
+
             }
         }
 
@@ -56,6 +57,8 @@ public class MateriasListView extends ListActivity {
 
     }
 
+    //METODO PARA BUSCAR BITACORA
+
 
 
     @Override
@@ -64,9 +67,7 @@ public class MateriasListView extends ListActivity {
 
         Intent i = new Intent(this, MenuPrincipalActivity.class);
         i.putExtra("idMaterias", Integer.parseInt(""+id));
-
         startActivity(i);
     }
-
 
 }

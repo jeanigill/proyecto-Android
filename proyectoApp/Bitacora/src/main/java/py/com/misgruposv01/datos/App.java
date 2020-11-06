@@ -93,11 +93,11 @@ public class App {
         items1.add(item3);
         items1.add(item4);
 
-        tema1 = new Tema ("Programación Orientada a Objetos", items1, investigaciones1, ejercicios1);
-        tema2 = new Tema ("Tema 2");
-        tema3 = new Tema ("Tema 3");
-        tema4 = new Tema ("Tema 4");
-        tema5 = new Tema ("Tema 5");
+        tema1 = new Tema (1, "Programación Orientada a Objetos", items1, investigaciones1, ejercicios1);
+        tema2 = new Tema (2, "Tema 2");
+        tema3 = new Tema (3, "Tema 3");
+        tema4 = new Tema (4, "Tema 4");
+        tema5 = new Tema (5, "Tema 5");
 
         temas1.add(tema1);
         temas1.add(tema2);

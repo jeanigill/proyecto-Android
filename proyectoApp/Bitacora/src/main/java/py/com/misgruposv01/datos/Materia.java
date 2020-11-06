@@ -59,6 +59,7 @@ public class Materia {
     }
 
 
+
 //    public int cantidadIntegrantes(){
 //        int cantidad = 0;
 //

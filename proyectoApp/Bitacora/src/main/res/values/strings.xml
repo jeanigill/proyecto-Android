@@ -16,4 +16,8 @@
     <string name="InformaticaI">Aktion 2</string>
     <string name="hola">hola</string>
     <string name="string_boton_2" />
+
+    <!-- lIST VIEW TEMAS -->
+    <string name="titulo_list_view_temas">TEMAS</string>
+
 </resources>
