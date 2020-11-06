@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Bitacora {
    private int id;
    private String anho;
-    private static ArrayList<Materia> materias;
+    private ArrayList<Materia> materias;
 
 //    static {
 //        materias = new ArrayList<>();
@@ -38,12 +38,12 @@ public class Bitacora {
         this.anho = anho;
     }
 
-    public static ArrayList<Materia> getMaterias() {
+    public ArrayList<Materia> getMaterias() {
         return materias;
     }
 
-    public static void setMaterias(ArrayList<Materia> materias) {
-        Bitacora.materias = materias;
+    public void setMaterias(ArrayList<Materia> materias) {
+        materias = materias;
     }
 }
 //    public void agregarContato(Contacto contacto) {

@@ -30,19 +30,33 @@ public class MateriasListView extends ListActivity {
         int idBitacora = 0;
         if(extras != null){
             idBitacora = extras.getInt("idBitacora", -1);
-            Log.i(LogUtils.tag, "Id recibido del grupo: "+idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora: "+idBitacora);
         }
 
         Bitacora unaBitacora;
-        
-        ArrayList<Materia> materias = unaBitacora.getMaterias();
-        Log.d(LogUtils.tag, "Cantidad de materias: " + materias.size());
+        ArrayList<Materia> materias = null;
+        for (int i=0; i<App.listadoBitacoras.size(); i++){
+            unaBitacora = App.getListadoBitacoras().get(i);
+
+            if (idBitacora == unaBitacora.getId()){
+
+                materias = unaBitacora.getMaterias();
+                Log.i(LogUtils.tag, "Bitacora encontrada - id: "+idBitacora);
+                Log.i(LogUtils.tag, "Cantidad de materias: "+materias.size());
+
+            }
+        }
+
+        setListAdapter(new MateriaAdaptador(this, materias));
+
+
 
         // Modo1
-        setListAdapter(new MateriaAdaptador(this, materias));
+
     }
 
-    ///METODO PARA BUSCAR BITACORA
+    //METODO PARA BUSCAR BITACORA
+
 
 
     @Override

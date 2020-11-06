@@ -1,6 +1,10 @@
 package py.com.misgruposv01.datos;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+
+import py.com.misgruposv01.utils.LogUtils;
 
 public class App {
 
@@ -8,7 +12,7 @@ public class App {
     public static ArrayList<Bitacora> listadoBitacoras = new ArrayList<>();
 
 
-  public static Bitacora bitacora1;
+    public static Bitacora bitacora1;
     public static Bitacora bitacora2;
 
     public static ArrayList<Materia> listadoMaterias1 = new ArrayList<>();
@@ -107,6 +111,7 @@ public class App {
         materia4 = new Materia (4, "Materia 4", temas3);
         materia5 = new Materia (5, "Materia 5", temas3);
         materia6 = new Materia (6, "Materia 6", temas3);
+        materia7 = new Materia (7, "Materia 7", temas3);
 
         listadoMaterias1.add(materia1);
         listadoMaterias1.add(materia2);
@@ -115,14 +120,18 @@ public class App {
         listadoMaterias1.add(materia5);
         listadoMaterias2.add(materia6);
         listadoMaterias2.add(materia7);
-
+        Log.i(LogUtils.tag, "ListadoMaterias1 size: "+listadoMaterias1.size());
+        Log.i(LogUtils.tag, "ListadoMaterias2 size: "+listadoMaterias2.size());
         bitacora1 = new Bitacora (1,  "1er año", listadoMaterias1);
+        Log.i(LogUtils.tag, "ListadoMaterias de bitacora size: "+bitacora1.getMaterias().size());
         bitacora2 = new Bitacora(2, "2do año", listadoMaterias2);
 
 
         listadoBitacoras.add(bitacora1 );
         listadoBitacoras.add(bitacora2 );
     }
+
+
 
     public App(    ) {
 
