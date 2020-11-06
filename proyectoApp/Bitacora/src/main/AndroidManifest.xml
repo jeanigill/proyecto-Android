@@ -12,14 +12,14 @@
         <activity android:name=".activities.MainActivity">
         </activity>
 
-        <activity android:name=".activities.MenuPrincipalActivity">
+        <activity android:name=".activities.MenuPrincipalActivity"> </activity>
+        <activity android:name=".activities.BitacorasListView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.AcercaDeActivity"> </activity>
 
         <activity android:name=".activities.Materia1Activity"> </activity>

@@ -3,31 +3,53 @@ package py.com.misgruposv01.datos;
 import java.util.ArrayList;
 
 public class Bitacora {
+   private int id;
    private String anho;
-
-//    private static Usuario usuarioLogueado;
-    private static ArrayList<Materia> listadoMaterias;
+    private static ArrayList<Materia> materias;
 
 //    static {
-//        listadoMaterias = new ArrayList<>();
-//        listadoMaterias.add( new Materia("batman", "Bruce Wine", "batman@ciudadgotica.com", "batman", "0900123123"));
+//        materias = new ArrayList<>();
+//        materias.add( new Materia("batman", "Bruce Wine", "batman@ciudadgotica.com", "batman", "0900123123"));
 //    }
 
-    public Bitacora(String anho, ArrayList listadoMaterias) {
+    public Bitacora(int id, String anho, ArrayList materias) {
         this.anho = anho;
-        this.listadoMaterias = listadoMaterias;
+        this.materias = materias;
     }
 
-    public Bitacora(String anho) {
+    public Bitacora(int id, String anho) {
         this.anho = anho;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAnho() {
+        return anho;
+    }
+
+    public void setAnho(String anho) {
+        this.anho = anho;
+    }
+
+    public static ArrayList<Materia> getMaterias() {
+        return materias;
+    }
+
+    public static void setMaterias(ArrayList<Materia> materias) {
+        Bitacora.materias = materias;
+    }
 }
 //    public void agregarContato(Contacto contacto) {
 //        contactos.add( contacto );
 //    }
-//
-//
+
+
 //    public static void agregarUsuario(Usuario usuario) {
 //        usuarios.add( usuario );
 //    }
