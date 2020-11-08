@@ -3,7 +3,7 @@ package py.com.misgruposv01.datos;
 import java.util.ArrayList;
 
 public class Bitacora {
-    private static ArrayList<Materia> materias;
+    private ArrayList<Materia> materias;
     private int id;
     private String anho;
 
@@ -12,6 +12,7 @@ public class Bitacora {
 //    static {
 //        materias = new ArrayList<>();
 //        materias.add( new Materia("batman", "Bruce Wine", "batman@ciudadgotica.com", "batman", "0900123123"));
+//
 //    }
 
     public Bitacora(int id, String anho, ArrayList materias) {
@@ -20,9 +21,9 @@ public class Bitacora {
         this.materias = materias;
     }
 
-    public static void agregarMateria(Materia materia) {
-        materias.add( materia );
-    }
+//    public static void agregarMateria(Materia materia) {
+//        materias.add( materia );
+//    }
 
 
     public Bitacora(int id, String anho) {

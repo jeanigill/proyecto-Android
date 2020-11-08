@@ -7,16 +7,7 @@
 	    >
 
 
-	<ImageView
-		android:id="@+id/imageView7"
-		android:layout_width="126dp"
-		android:layout_height="89dp"
-		android:layout_alignParentEnd="true"
-		android:layout_alignParentBottom="true"
-		android:layout_marginEnd="-1dp"
-		android:layout_marginBottom="4dp"
-		android:onClick="lanzarVistaAddMateria"
-		app:srcCompat="@android:drawable/ic_menu_add" />
+
 
 		<TextView
 		android:id="@+id/titulo_principal"
@@ -24,7 +15,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="20dp"
 		android:gravity="center"
-		android:text="@string/boton_acerca_de"
+		android:text="@string/titulo_list_view_materias"
 		android:textSize="29sp" />
 
 	<ListView
@@ -41,6 +32,26 @@
 
 
 	</ListView>
+
+
+	<Button
+		android:id="@+id/button1"
+		android:layout_width="220dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:onClick="lanzarVistaAddMateria"
+		android:text="Crear Materia" />
+
+	<ImageView
+		android:id="@+id/imageView7"
+		android:layout_width="122dp"
+		android:layout_height="91dp"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+		android:layout_marginEnd="3dp"
+		android:layout_marginBottom="4dp"
+		android:onClick="lanzarVistaAddMateria"
+		app:srcCompat="@android:drawable/ic_menu_add" />
 
 
 </RelativeLayout>

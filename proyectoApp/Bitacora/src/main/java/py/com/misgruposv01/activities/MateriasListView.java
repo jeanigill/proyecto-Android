@@ -26,35 +26,58 @@ public class MateriasListView extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_materias);
 
-        Bundle extras = getIntent().getExtras();
-        int idBitacora = 0;
-        if(extras != null){
-            idBitacora = extras.getInt("idBitacora", -1);
-            Log.i(LogUtils.tag, "Id recibido de la bitacora: "+idBitacora);
-        }
+//        Bundle extras = getIntent().getExtras();
+//        int idBitacora = 0;
+//        if(extras != null){
+//            idBitacora = extras.getInt("idBitacora", -1);
+//            Log.i(LogUtils.tag, "Id recibido de la bitacora: "+idBitacora);
+//        }
+//
+//        Bitacora unaBitacora;
+//        ArrayList<Materia> materias = null;
+//        for (int i=0; i<App.listadoBitacoras.size(); i++){
+//            unaBitacora = App.getListadoBitacoras().get(i);
+//
+//            if (idBitacora == unaBitacora.getId()){
+//
+//                materias = unaBitacora.getMaterias();
+//                Log.i(LogUtils.tag, "Bitacora encontrada - id: "+idBitacora);
+//                Log.i(LogUtils.tag, "Cantidad de materias: "+materias.size());
+////                Intent i = new Intent(this, MenuPrincipalActivity.class);
+////                i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
+//            }
+//        }
+//
+Bitacora unaBitacora = buscarBitacora();
 
-        Bitacora unaBitacora;
-        ArrayList<Materia> materias = null;
-        for (int i=0; i<App.listadoBitacoras.size(); i++){
-            unaBitacora = App.getListadoBitacoras().get(i);
-
-            if (idBitacora == unaBitacora.getId()){
-
-                materias = unaBitacora.getMaterias();
-                Log.i(LogUtils.tag, "Bitacora encontrada - id: "+idBitacora);
-                Log.i(LogUtils.tag, "Cantidad de materias: "+materias.size());
-//                Intent i = new Intent(this, MenuPrincipalActivity.class);
-//                i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
-            }
-        }
-
-        setListAdapter(new MateriaAdaptador(this, materias));
+        setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
 
 
 
-        // Modo1
 
     }
+
+public Bitacora buscarBitacora () {
+    Bundle extras = getIntent().getExtras();
+    int idBitacora = 0;
+    if (extras != null) {
+        idBitacora = extras.getInt("idBitacora", -1);
+        Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+    }
+
+    Bitacora unaBitacora = null;
+       for (int i = 0; i < App.listadoBitacoras.size(); i++) {
+        unaBitacora = App.listadoBitacoras.get(i);
+        if (idBitacora == unaBitacora.getId()) {
+            i = App.listadoBitacoras.size();
+            return unaBitacora;
+        }
+    }
+    return null;
+}
+
+
+
 
 
 
@@ -69,8 +92,10 @@ public class MateriasListView extends ListActivity {
     }
 
 
-    public void lanzarVistaAddMateria(View view) {
 
-
+    public void lanzarVistaAddMateria(View view){
+        Intent i = new Intent(this, AddMateriaActivity.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
     }
 }

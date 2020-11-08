@@ -20,4 +20,9 @@
     <!-- lIST VIEW TEMAS -->
     <string name="titulo_list_view_temas">TEMAS</string>
 
+    <!-- lIST VIEW MATERIAS -->
+    <string name="titulo_list_view_materias">MATERIAS</string>
+
+
+
 </resources>

@@ -27,6 +27,10 @@ public class Materia {
         this.nombreMateria = nombreMateria;
         temas = temas;
     }
+    public Materia(int id, String nombreMateria) {
+        this.id = id;
+        this.nombreMateria = nombreMateria;
+    }
 
 //    public static void agregarGrupo( Grupo unGrupo ) {
 //        grupos.add( unGrupo );
