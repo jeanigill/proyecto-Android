@@ -31,7 +31,6 @@ public class MenuPrincipalActivity extends Activity {
 
     public void lanzarVistaAddMateria (View view){
         Intent i = new Intent(this, AddMateriaActivity.class);
-        //i.putExtra("id", (long)0);
         startActivity(i);
     }
 }

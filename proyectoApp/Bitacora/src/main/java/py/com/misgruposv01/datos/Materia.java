@@ -5,8 +5,9 @@ import java.util.Date;
 
 public class Materia {
     private int id;
-    private String nombre;
+    private String nombreMateria;
     private ArrayList<Tema> temas;
+
 
 //    public static ArrayList<Grupo> grupos = new ArrayList<>();
 //
@@ -17,17 +18,15 @@ public class Materia {
 //        grupos.add( new Grupo("Estudiantes Programación", "Grupo para compartir conocimientos sobre Programación", 0.0, 0.0, unUsuario));
 //    }
 
-    public Materia(String nombre) {
-        this.nombre = nombre;
+    public Materia(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
         temas = new ArrayList<>();
     }
-    public Materia(int id, String nombre, ArrayList temas) {
+    public Materia(int id, String nombreMateria, ArrayList temas) {
         this.id = id;
-        this.nombre = nombre;
+        this.nombreMateria = nombreMateria;
         temas = temas;
     }
-
-
 
 //    public static void agregarGrupo( Grupo unGrupo ) {
 //        grupos.add( unGrupo );
@@ -43,11 +42,11 @@ public class Materia {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreMateria;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
     }
 
     public ArrayList<Tema> getTemas() {

@@ -3,9 +3,11 @@ package py.com.misgruposv01.datos;
 import java.util.ArrayList;
 
 public class Bitacora {
-   private int id;
-   private String anho;
-   private ArrayList<Materia> materias;
+    private static ArrayList<Materia> materias;
+    private int id;
+    private String anho;
+
+
 
 //    static {
 //        materias = new ArrayList<>();
@@ -17,6 +19,11 @@ public class Bitacora {
         this.anho = anho;
         this.materias = materias;
     }
+
+    public static void agregarMateria(Materia materia) {
+        materias.add( materia );
+    }
+
 
     public Bitacora(int id, String anho) {
         this.anho = anho;
