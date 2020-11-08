@@ -135,10 +135,12 @@ public class App {
         bitacora.getMaterias().add(materia);
         Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
     }
-
-    public App(    ) {
-
+    public static void agregarBitacora(Bitacora unaBitacora) {
+        listadoBitacoras.add(unaBitacora);
+        Log.i(LogUtils.tag, "Materia nueva: "+unaBitacora.getAnho());
     }
+
+
 
 //
 //    public void agregarContato(Contacto contacto) {

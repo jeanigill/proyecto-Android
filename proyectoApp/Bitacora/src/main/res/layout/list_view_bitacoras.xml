@@ -42,4 +42,11 @@
 
 
     </ListView>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="lanzarVistaAddBitacora"
+        android:text="Crear Materia" />
 </RelativeLayout>

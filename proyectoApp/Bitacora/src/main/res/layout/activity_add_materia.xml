@@ -71,7 +71,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:layout_below="@id/editTextDate"
         android:layout_marginTop="10dp"
         android:onClick="crearMateria"
-        android:text="Crear Materia" />
+        android:text="@string/new_materia" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
