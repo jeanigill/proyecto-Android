@@ -35,13 +35,16 @@ public class AddMateriaActivity extends Activity {
      String nombreMateria = campoNombreMateria.getText().toString();
      String codigoMateria = campoCodigo.getText().toString();
      int codMateriaI = (int) (Double.parseDouble(codigoMateria));
-        MateriasListView metodoBuscar = new MateriasListView();
+
+
+     MateriasListView metodoBuscar = new MateriasListView();
    Materia materia = new Materia(codMateriaI, nombreMateria);
    Bitacora unaBitacora = metodoBuscar.buscarBitacora();
      App.agregarMateria(unaBitacora, materia);
         Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
      Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
      startActivity( intentLanzarMaterias );
+
     }
 
 }
