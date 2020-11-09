@@ -49,5 +49,4 @@
 		android:onClick="lanzarVistaAddMateria"
 		android:src="@android:drawable/ic_input_add" />
 
-
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import py.com.misgruposv01.R;
 
@@ -25,8 +26,16 @@ public class SplashActivity extends Activity {
 			public void run(){
 				Intent intent = new Intent(py.com.misgruposv01.activities.SplashActivity.this, BitacorasListView.class);
 				startActivity(intent);
+				desplegarMensaje();
 				finish();
 			};
 		}, DURACION_SPLASH);
 	}
+
+
+	public void desplegarMensaje() {
+		Toast toast = Toast.makeText( this, "Inicio exitoso", Toast.LENGTH_SHORT);
+		toast.show();
+	}
+
 }
