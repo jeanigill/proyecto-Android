@@ -91,13 +91,4 @@ public class Tema {
         this.investigaciones = investigaciones;
     }
 
-
-//    public int cantidadIntegrantes(){
-//        int cantidad = 0;
-//
-//        if(usuariosIntegrantes != null){
-//            cantidad = usuariosIntegrantes.size();
-//        }
-//        return cantidad;
-//    }
 }

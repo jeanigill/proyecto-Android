@@ -146,9 +146,12 @@ public class App {
             unaBitacora = App.listadoBitacoras.get(i);
             if (idBitacora == unaBitacora.getId()) {
                 i = App.listadoBitacoras.size();
+                Log.i(LogUtils.tag, "Bitacora encontrada: "+idBitacora);
                 return unaBitacora;
             }
+
         }
+        Log.i(LogUtils.tag, "Bitacora NULL: ");
         return null;
     }
 
@@ -158,9 +161,11 @@ public class App {
             unaMateria = unaBitacora.getMaterias().get(i);
             if (idMateria == unaMateria.getId()) {
                 i = unaBitacora.getMaterias().size();
+                Log.i(LogUtils.tag, "Materia encontrada: "+unaMateria.getNombre());
                 return unaMateria;
             }
         }
+        Log.i(LogUtils.tag, "Materia null ");
         return null;
     }
 

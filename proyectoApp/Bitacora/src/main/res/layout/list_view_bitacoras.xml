@@ -29,5 +29,20 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="51dp"></ListView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button"
+        android:layout_width="87dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="264dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/verde_200"
+        android:contentDescription="add_butt"
+        android:onClick="lanzarVistaAddBitacora"
+        android:src="@android:drawable/ic_input_add" />
+
 
 </RelativeLayout>

@@ -1,26 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	>
 
-	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="match_parent"
-    	android:layout_height="wrap_content"	    
-	    >
-	    
-	    <TextView 
-	      android:id="@+id/titulo_principal"
-	      android:layout_width="match_parent"
-	      android:layout_height="wrap_content"
-	      android:text="@string/titulo_list_view_temas"
-	      android:gravity="center"
-	      android:textSize="29sp"
-	      android:layout_marginBottom="20dp"/>
+
+	<TextView
+		android:id="@+id/crear_cuenta_titulo"
+		android:layout_width="match_parent"
+		android:layout_height="61dp"
+		android:layout_marginBottom="20dp"
+		android:background="@color/verde_200"
+		android:gravity="center"
+		android:text="@string/titulo_list_view_temas"
+		android:textSize="29sp"
+		android:textStyle="bold" />
+
 
 	<ListView
 		android:id="@android:id/list"
-		android:layout_width="wrap_content"
-		android:layout_height="551dp"
+		android:layout_width="401dp"
+		android:layout_height="577dp"
+		android:layout_above="@+id/textView"
+		android:layout_below="@+id/crear_cuenta_titulo"
 		android:layout_alignParentStart="true"
-		android:layout_marginStart="-3dp"
-		android:layout_marginTop="65dp"/>
+		android:layout_alignParentTop="true"
+		android:layout_alignParentEnd="true"
+		android:layout_centerInParent="true"
+		android:layout_marginStart="0dp"
+		android:layout_marginTop="60dp"
+		android:layout_marginEnd="9dp"
+		android:layout_marginBottom="70dp"></ListView>
 
-	</RelativeLayout>
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/button"
+		android:layout_width="87dp"
+		android:layout_height="80dp"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+		android:layout_gravity="bottom|end"
+		android:layout_marginStart="264dp"
+		android:layout_marginEnd="26dp"
+		android:layout_marginBottom="2dp"
+		android:background="@color/verde_200"
+		android:contentDescription="add_butt"
+		android:onClick="lanzarVistaAddMateria"
+		android:src="@android:drawable/ic_input_add" />
 
+</RelativeLayout>

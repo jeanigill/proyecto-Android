@@ -35,10 +35,14 @@ import py.com.misgruposv01.utils.LogUtils;
             idBitacora = extras.getInt("idBitacora", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
+            Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+            Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
+            Log.i(LogUtils.tag, "Materias Size: " + unaMateria.getTemas().size());
+            setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
+        }else{
+            Log.i(LogUtils.tag, "Log es NULL" );
         }
-        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
-        Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
-        setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
+
     }
 
 
