@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".activities.AcercaDeActivity"> </activity>
 
+        <activity android:name=".activities.TemasListView"> </activity>
         <activity android:name=".activities.Materia1Activity"> </activity>
 
         <activity android:name=".activities.AddMateriaActivity"> </activity>

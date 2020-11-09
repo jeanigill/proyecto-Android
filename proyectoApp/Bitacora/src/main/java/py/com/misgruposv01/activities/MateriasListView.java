@@ -16,6 +16,7 @@ import py.com.misgruposv01.adaptadores.MateriaAdaptador;
 import py.com.misgruposv01.datos.App;
 import py.com.misgruposv01.datos.Bitacora;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
 public class MateriasListView extends ListActivity {
@@ -25,6 +26,8 @@ public class MateriasListView extends ListActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_materias);
+
+
 
 //        Bundle extras = getIntent().getExtras();
 //        int idBitacora = 0;
@@ -49,7 +52,6 @@ public class MateriasListView extends ListActivity {
 //        }
 //
 Bitacora unaBitacora = buscarBitacora();
-
         setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
 
 
@@ -85,7 +87,7 @@ public Bitacora buscarBitacora () {
     protected void onListItemClick (ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
-        Intent i = new Intent(this, MenuPrincipalActivity.class);
+        Intent i = new Intent(this, TemasListView.class);
         i.putExtra("idMaterias", Integer.parseInt(""+id));
 
         startActivity(i);
