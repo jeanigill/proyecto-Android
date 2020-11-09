@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
 
 		new Handler().postDelayed(new Runnable(){
 			public void run(){
-				Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+				Intent intent = new Intent(py.com.misgruposv01.activities.SplashActivity.this, BitacorasListView.class);
 				startActivity(intent);
 				finish();
 			};
