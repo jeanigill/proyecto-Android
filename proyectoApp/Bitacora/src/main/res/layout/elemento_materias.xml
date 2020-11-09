@@ -22,7 +22,5 @@
 		android:textSize="20sp"
 		android:layout_toRightOf="@id/logo_bitacora" />
 
-
-
 </RelativeLayout>
 

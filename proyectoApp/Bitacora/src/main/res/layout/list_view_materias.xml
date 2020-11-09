@@ -46,8 +46,7 @@
 		android:layout_marginBottom="2dp"
 		android:background="@color/verde_200"
 		android:contentDescription="add_butt"
-		android:onClick="lanzarVistaCrearMateria"
+		android:onClick="lanzarVistaAddMateria"
 		android:src="@android:drawable/ic_input_add" />
-
 
 </RelativeLayout>
