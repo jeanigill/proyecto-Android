@@ -31,17 +31,23 @@ public class AddMateriaActivity extends Activity {
     }
 
 
-    public void crearMateria (View view) {
-     String nombreMateria = campoNombreMateria.getText().toString();
-     String codigoMateria = campoCodigo.getText().toString();
-     int codMateriaI = (int) (Double.parseDouble(codigoMateria));
-        MateriasListView metodoBuscar = new MateriasListView();
-   Materia materia = new Materia(codMateriaI, nombreMateria);
-   Bitacora unaBitacora = metodoBuscar.buscarBitacora();
-     App.agregarMateria(unaBitacora, materia);
-        Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
-     Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
-     startActivity( intentLanzarMaterias );
+//    public void crearMateria (View view) {
+//     String nombreMateria = campoNombreMateria.getText().toString();
+//     String codigoMateria = campoCodigo.getText().toString();
+//     int codMateriaI = (int) (Double.parseDouble(codigoMateria));
+//        MateriasListView metodoBuscar = new MateriasListView();
+//   Materia materia = new Materia(codMateriaI, nombreMateria);
+//   Bitacora unaBitacora = metodoBuscar.buscarBitacora();
+//     App.agregarMateria(unaBitacora, materia);
+//        Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
+//     Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
+//     startActivity( intentLanzarMaterias );
+//    }
+
+
+    public void lanzarVistaAddMateria (View view){
+        Intent i = new Intent(this, AddMateriaActivity.class);
+        startActivity(i);
     }
 
 }

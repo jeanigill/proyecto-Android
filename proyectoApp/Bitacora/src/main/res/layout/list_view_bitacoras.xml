@@ -5,23 +5,6 @@
     android:layout_height="wrap_content"
     >
 
-    <!-- Modo 1 -->
-
-    <!-- Modo 1 -->
-    <!--<TextView
-        android:id="@android:id/empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lista_vacia" />
-
-    <!- Modo 2 -->
-    <!--ListView
-        android:id="@+id/listTaxista"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titulo_principal"/-->
-
-
     <TextView
         android:id="@+id/crear_cuenta_titulo"
         android:layout_width="match_parent"
@@ -47,15 +30,5 @@
         android:layout_marginBottom="51dp"></ListView>
 
 
-<<<<<<< HEAD
-=======
-    </ListView>
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="lanzarVistaAddBitacora"
-        android:text="Crear Materia" />
->>>>>>> 5edd68acf688008fa55c7cbb1c7ac095d770bb94
+
 </RelativeLayout>

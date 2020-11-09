@@ -140,8 +140,29 @@ public class App {
         Log.i(LogUtils.tag, "Materia nueva: "+unaBitacora.getAnho());
     }
 
+    public static Bitacora buscarBitacora (int idBitacora) {
+        Bitacora unaBitacora = null;
+        for (int i = 0; i < App.listadoBitacoras.size(); i++) {
+            unaBitacora = App.listadoBitacoras.get(i);
+            if (idBitacora == unaBitacora.getId()) {
+                i = App.listadoBitacoras.size();
+                return unaBitacora;
+            }
+        }
+        return null;
+    }
 
-
+    public static Materia buscarMateria (Bitacora unaBitacora, int idMateria){
+        Materia unaMateria = null;
+        for (int i = 0; i < unaBitacora.getMaterias().size(); i++) {
+            unaMateria = unaBitacora.getMaterias().get(i);
+            if (idMateria == unaMateria.getId()) {
+                i = unaBitacora.getMaterias().size();
+                return unaMateria;
+            }
+        }
+        return null;
+    }
 //
 //    public void agregarContato(Contacto contacto) {
 //        contactos.add( contacto );

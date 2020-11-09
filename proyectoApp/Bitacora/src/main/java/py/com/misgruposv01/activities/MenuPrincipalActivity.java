@@ -23,8 +23,8 @@ public class MenuPrincipalActivity extends Activity {
         //i.putExtra("id", (long)0);
         startActivity(i);
     }
-    public void lanzarVistaMateria1 (View view){
-        Intent i = new Intent(this, Materia1Activity.class);
+    public void lanzarVistaMaterias (View view){
+        Intent i = new Intent(this, MateriasListView.class);
         //i.putExtra("id", (long)0);
         startActivity(i);
     }

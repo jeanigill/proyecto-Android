@@ -20,42 +20,26 @@ import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
  public class TemasListView extends ListActivity {
-
+     int idMateria = 0;
+     int idBitacora = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_temas);
 
-         Bundle extras = getIntent().getExtras();
-
-        Materia unaMateria = buscarMateria();
+        Log.i(LogUtils.tag, "METODO DE TEMAS LIST VIEW" );
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            idMateria = extras.getInt("idMateria", -1);
+            idBitacora = extras.getInt("idBitacora", -1);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
+        }
+        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+        Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
         setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
-
     }
-
-    //    METODO PARA BUSCAR MATERIA
-     public Materia buscarMateria (){
-         Log.i(LogUtils.tag, "TEMASlISTvIEW BUSCAR MATERIA" );
-         Bundle extras = getIntent().getExtras();
-         int idMateria = 0;
-         if (extras != null) {
-             idMateria = extras.getInt("idMateria", -1);
-             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
-         }
-        MateriasListView metodo = null;
-         Bitacora unaBitacora = metodo.buscarBitacora();
-         Materia unaMateria = null;
-         for (int i = 0; i < unaBitacora.getMaterias().size(); i++) {
-             unaMateria = unaBitacora.getMaterias().get(i);
-             if (idMateria == unaMateria.getId()) {
-                 i = unaBitacora.getMaterias().size();
-                 return unaMateria;
-             }
-         }
-         return null;
-     }
-
 
 
     @Override
@@ -63,7 +47,7 @@ import py.com.misgruposv01.utils.LogUtils;
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, MenuPrincipalActivity.class);
-        i.putExtra("idMaterias", Integer.parseInt(""+id));
+        i.putExtra("idTema", Integer.parseInt(""+id));
         startActivity(i);
     }
 

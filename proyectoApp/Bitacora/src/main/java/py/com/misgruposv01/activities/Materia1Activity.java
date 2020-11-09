@@ -13,7 +13,6 @@ public class Materia1Activity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.d(tag, "Inicia metodo en Materia1Activity.onCreate");
-	//	int entero = Integer.parseInt("n");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_materia1);
 	}
