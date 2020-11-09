@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.MenuPrincipalActivity">
+    tools:context=".activities.AddMateriaActivity">
 
 
 
@@ -71,7 +71,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:layout_below="@id/editTextDate"
         android:layout_marginTop="10dp"
         android:onClick="crearMateria"
-        android:text="Crear Materia" />
+        android:text="@string/new_materia" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"

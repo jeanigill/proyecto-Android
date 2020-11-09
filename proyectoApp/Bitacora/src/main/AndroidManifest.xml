@@ -14,10 +14,16 @@
 
         <activity android:name=".activities.AcercaDeActivity"> </activity>
 
+        <activity android:name=".activities.TemasListView"> </activity>
         <activity android:name=".activities.Materia1Activity"> </activity>
 
         <activity android:name=".activities.AddMateriaActivity"> </activity>
 
+<<<<<<< HEAD
+=======
+        <activity android:name=".activities.AddBitacoraActivity"> </activity>
+
+>>>>>>> 5edd68acf688008fa55c7cbb1c7ac095d770bb94
         <activity android:name=".activities.MateriasListView"> </activity>
 
         <activity android:name=".activities.MenuPrincipalActivity"> </activity>
