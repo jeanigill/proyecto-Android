@@ -94,8 +94,8 @@ public class App {
         items1.add(item4);
 
         tema1 = new Tema (1, "Programación Orientada a Objetos", items1, investigaciones1, ejercicios1);
-        tema2 = new Tema (2, "Tema 2");
-        tema3 = new Tema (3, "Tema 3");
+        tema2 = new Tema (2, "Tema 2",items1, investigaciones1, ejercicios1);
+        tema3 = new Tema (3, "Tema 3",items1, investigaciones1, ejercicios1);
         tema4 = new Tema (4, "Tema 4");
         tema5 = new Tema (5, "Tema 5");
 
@@ -120,6 +120,7 @@ public class App {
         listadoMaterias1.add(materia5);
         listadoMaterias2.add(materia6);
         listadoMaterias2.add(materia7);
+        //Log.i(LogUtils.tag, "Cantidad de temas en materia 1 size: "+materia1.getTemas().size());
         Log.i(LogUtils.tag, "ListadoMaterias1 size: "+listadoMaterias1.size());
         Log.i(LogUtils.tag, "ListadoMaterias2 size: "+listadoMaterias2.size());
         bitacora1 = new Bitacora (1,  "1er año", listadoMaterias1);
@@ -131,70 +132,47 @@ public class App {
         listadoBitacoras.add(bitacora2 );
     }
 
-    public static void agregarMateria(Bitacora bitacora, Materia materia) {
-        bitacora.getMaterias().add(materia);
-        Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
-    }
+//    public static void agregarMateria(Bitacora bitacora, Materia materia) {
+//        bitacora.getMaterias().add(materia);
+//        Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
+//    }
     public static void agregarBitacora(Bitacora unaBitacora) {
         listadoBitacoras.add(unaBitacora);
         Log.i(LogUtils.tag, "Materia nueva: "+unaBitacora.getAnho());
     }
 
+    public static Bitacora buscarBitacora (int idBitacora) {
+        Bitacora unaBitacora = null;
+        for (int i = 0; i < listadoBitacoras.size(); i++) {
+            unaBitacora = listadoBitacoras.get(i);
+            if (idBitacora == unaBitacora.getId()) {
+                i = listadoBitacoras.size();
+                Log.i(LogUtils.tag, "Bitacora encontrada: "+unaBitacora.getAnho());
+                return unaBitacora;
+            }
 
+        }
+        Log.i(LogUtils.tag, "Bitacora NULL");
+        return null;
+    }
 
-//
-//    public void agregarContato(Contacto contacto) {
-//        contactos.add( contacto );
-//    }
-//
-//
-//    public static void agregarUsuario(Usuario usuario) {
-//        usuarios.add( usuario );
-//    }
-//
-//    public static boolean comprobarCredenciales(String email, String password) {
-//
-//        for( Usuario usuario : usuarios) {
-//            if ( email.equals(usuario.getMail()) && password.equals(usuario.getPassword())){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public static Materia buscarMateria (Bitacora unaBitacora, int idMateria){
+        Materia unaMateria = null;
+        for (int i = 0; i < unaBitacora.getMaterias().size(); i++) {
+            unaMateria = unaBitacora.getMaterias().get(i);
+            Log.i(LogUtils.tag, "Bitacoras size: "+unaBitacora.getMaterias().size());
+            if (idMateria == unaMateria.getId()) {
+                i = unaBitacora.getMaterias().size();
+                Log.i(LogUtils.tag, "Materia encontrada: "+unaMateria.getNombre());
+                Log.i(LogUtils.tag, "Cantidad de temas: "+unaMateria.getTemas().size()
+                );
+                return unaMateria;
+            }
+        }
+        Log.i(LogUtils.tag, "Materia null ");
+        return null;
+    }
 
-//    public static void setUsuarioLogueado(Usuario usuario) {
-//        usuarioLogueado = usuario;
-//    }
-//
-//    public static Usuario getUsuarioLogueado() {
-//        return usuarioLogueado;
-//    }
-//
-//    public static Usuario getUsuario(String email ) {
-//        for( Usuario usuario : usuarios) {
-//            if ( email.equals(usuario.getMail()) ){
-//                return usuario;
-//            }
-//        }
-//        // TODO se podria lanzar una excepcion al no encontrar el usuairo
-//        return null;
-//    }
-//
-//    public String getMail() {
-//        return mail;
-//    }
-//
-//    public void setMail(String mail) {
-//        this.mail = mail;
-//    }
-//
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
 
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;

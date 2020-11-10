@@ -32,13 +32,14 @@ public class AddBitacoraActivity extends Activity {
     public void crearBitacora (View view) {
         String idString = campoId.getText().toString();
         int id = (int) (Double.parseDouble(idString));
-     String anho = campoAnho.getText().toString();
+        String anho = campoAnho.getText().toString();
 
         Bitacora unaBitacora = new Bitacora( id, anho);
         App.agregarBitacora(unaBitacora);
         Log.i(LogUtils.tag, "Metodo Crear Bitacora: "+unaBitacora.getAnho());
-     Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
-     startActivity( intentLanzarMaterias );
+     Intent intentLanzarBitacoras = new Intent( this, BitacorasListView.class );
+     startActivity( intentLanzarBitacoras );
+        Log.i(LogUtils.tag, "Cantidad de bitacoras: "+App.listadoBitacoras.size());
     }
 
 }

@@ -33,9 +33,9 @@ public class Tema {
         this.id = id;
         this.nombre = nombre;
         this.fecha = new Date();
-        items = items;
-        investigaciones = investigaciones;
-        ejercicios = ejercicios;
+        this.items = items;
+        this.investigaciones = investigaciones;
+        this.ejercicios = ejercicios;
 
     }
 
@@ -91,13 +91,4 @@ public class Tema {
         this.investigaciones = investigaciones;
     }
 
-
-//    public int cantidadIntegrantes(){
-//        int cantidad = 0;
-//
-//        if(usuariosIntegrantes != null){
-//            cantidad = usuariosIntegrantes.size();
-//        }
-//        return cantidad;
-//    }
 }

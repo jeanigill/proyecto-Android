@@ -5,23 +5,6 @@
     android:layout_height="wrap_content"
     >
 
-    <!-- Modo 1 -->
-
-    <!-- Modo 1 -->
-    <!--<TextView
-        android:id="@android:id/empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lista_vacia" />
-
-    <!- Modo 2 -->
-    <!--ListView
-        android:id="@+id/listTaxista"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titulo_principal"/-->
-
-
     <TextView
         android:id="@+id/crear_cuenta_titulo"
         android:layout_width="match_parent"
@@ -45,5 +28,21 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="51dp"></ListView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button"
+        android:layout_width="87dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="264dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/verde_200"
+        android:contentDescription="add_butt"
+        android:onClick="lanzarVistaAddBitacora"
+        android:src="@android:drawable/ic_input_add" />
+
 
 </RelativeLayout>

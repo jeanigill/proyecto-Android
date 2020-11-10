@@ -20,38 +20,22 @@ import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
 public class MateriasListView extends ListActivity {
-
+public int idBitacora;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_view_materias);
 
+        Bundle extras = getIntent().getExtras();
+        idBitacora = 0;
+        if (extras != null) {
+            idBitacora = extras.getInt("idBitacora", -1);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+        }
 
+        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
 
-//        Bundle extras = getIntent().getExtras();
-//        int idBitacora = 0;
-//        if(extras != null){
-//            idBitacora = extras.getInt("idBitacora", -1);
-//            Log.i(LogUtils.tag, "Id recibido de la bitacora: "+idBitacora);
-//        }
-//
-//        Bitacora unaBitacora;
-//        ArrayList<Materia> materias = null;
-//        for (int i=0; i<App.listadoBitacoras.size(); i++){
-//            unaBitacora = App.getListadoBitacoras().get(i);
-//
-//            if (idBitacora == unaBitacora.getId()){
-//
-//                materias = unaBitacora.getMaterias();
-//                Log.i(LogUtils.tag, "Bitacora encontrada - id: "+idBitacora);
-//                Log.i(LogUtils.tag, "Cantidad de materias: "+materias.size());
-////                Intent i = new Intent(this, MenuPrincipalActivity.class);
-////                i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
-//            }
-//        }
-//
-Bitacora unaBitacora = buscarBitacora();
         setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
 
 
@@ -59,24 +43,7 @@ Bitacora unaBitacora = buscarBitacora();
 
     }
 
-public Bitacora buscarBitacora () {
-    Bundle extras = getIntent().getExtras();
-    int idBitacora = 0;
-    if (extras != null) {
-        idBitacora = extras.getInt("idBitacora", -1);
-        Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
-    }
 
-    Bitacora unaBitacora = null;
-       for (int i = 0; i < App.listadoBitacoras.size(); i++) {
-        unaBitacora = App.listadoBitacoras.get(i);
-        if (idBitacora == unaBitacora.getId()) {
-            i = App.listadoBitacoras.size();
-            return unaBitacora;
-        }
-    }
-    return null;
-}
 
 
 
@@ -88,7 +55,8 @@ public Bitacora buscarBitacora () {
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, TemasListView.class);
-        i.putExtra("idMaterias", Integer.parseInt(""+id));
+        i.putExtra("idMateria", Integer.parseInt(""+id));
+        i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
 
         startActivity(i);
     }
