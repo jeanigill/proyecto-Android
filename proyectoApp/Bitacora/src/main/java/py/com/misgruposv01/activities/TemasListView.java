@@ -22,6 +22,8 @@ import py.com.misgruposv01.utils.LogUtils;
  public class TemasListView extends ListActivity {
      int idMateria = 0;
      int idBitacora = 0;
+     Bitacora unaBitacora = null;
+     Materia unaMateria = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,8 +37,8 @@ import py.com.misgruposv01.utils.LogUtils;
             idBitacora = extras.getInt("idBitacora", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
-            Bitacora unaBitacora = App.buscarBitacora(idBitacora);
-            Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
+            unaBitacora = App.buscarBitacora(idBitacora);
+            unaMateria = App.buscarMateria(unaBitacora, idMateria);
             Log.i(LogUtils.tag, "Materias Size: " + unaMateria.getTemas().size());
             setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
         }else{

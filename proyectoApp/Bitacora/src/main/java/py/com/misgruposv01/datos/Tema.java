@@ -33,9 +33,9 @@ public class Tema {
         this.id = id;
         this.nombre = nombre;
         this.fecha = new Date();
-        items = items;
-        investigaciones = investigaciones;
-        ejercicios = ejercicios;
+        this.items = items;
+        this.investigaciones = investigaciones;
+        this.ejercicios = ejercicios;
 
     }
 

@@ -25,7 +25,7 @@ public class Materia {
     public Materia(int id, String nombreMateria, ArrayList temas) {
         this.id = id;
         this.nombreMateria = nombreMateria;
-        temas = temas;
+        this.temas = temas;
     }
     public Materia(int id, String nombreMateria) {
         this.id = id;

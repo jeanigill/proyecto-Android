@@ -94,8 +94,8 @@ public class App {
         items1.add(item4);
 
         tema1 = new Tema (1, "Programación Orientada a Objetos", items1, investigaciones1, ejercicios1);
-        tema2 = new Tema (2, "Tema 2");
-        tema3 = new Tema (3, "Tema 3");
+        tema2 = new Tema (2, "Tema 2",items1, investigaciones1, ejercicios1);
+        tema3 = new Tema (3, "Tema 3",items1, investigaciones1, ejercicios1);
         tema4 = new Tema (4, "Tema 4");
         tema5 = new Tema (5, "Tema 5");
 
@@ -120,6 +120,7 @@ public class App {
         listadoMaterias1.add(materia5);
         listadoMaterias2.add(materia6);
         listadoMaterias2.add(materia7);
+        //Log.i(LogUtils.tag, "Cantidad de temas en materia 1 size: "+materia1.getTemas().size());
         Log.i(LogUtils.tag, "ListadoMaterias1 size: "+listadoMaterias1.size());
         Log.i(LogUtils.tag, "ListadoMaterias2 size: "+listadoMaterias2.size());
         bitacora1 = new Bitacora (1,  "1er año", listadoMaterias1);
@@ -142,16 +143,16 @@ public class App {
 
     public static Bitacora buscarBitacora (int idBitacora) {
         Bitacora unaBitacora = null;
-        for (int i = 0; i < App.listadoBitacoras.size(); i++) {
-            unaBitacora = App.listadoBitacoras.get(i);
+        for (int i = 0; i < listadoBitacoras.size(); i++) {
+            unaBitacora = listadoBitacoras.get(i);
             if (idBitacora == unaBitacora.getId()) {
-                i = App.listadoBitacoras.size();
-                Log.i(LogUtils.tag, "Bitacora encontrada: "+idBitacora);
+                i = listadoBitacoras.size();
+                Log.i(LogUtils.tag, "Bitacora encontrada: "+unaBitacora.getAnho());
                 return unaBitacora;
             }
 
         }
-        Log.i(LogUtils.tag, "Bitacora NULL: ");
+        Log.i(LogUtils.tag, "Bitacora NULL");
         return null;
     }
 
@@ -159,9 +160,12 @@ public class App {
         Materia unaMateria = null;
         for (int i = 0; i < unaBitacora.getMaterias().size(); i++) {
             unaMateria = unaBitacora.getMaterias().get(i);
+            Log.i(LogUtils.tag, "Bitacoras size: "+unaBitacora.getMaterias().size());
             if (idMateria == unaMateria.getId()) {
                 i = unaBitacora.getMaterias().size();
                 Log.i(LogUtils.tag, "Materia encontrada: "+unaMateria.getNombre());
+                Log.i(LogUtils.tag, "Cantidad de temas: "+unaMateria.getTemas().size()
+                );
                 return unaMateria;
             }
         }
