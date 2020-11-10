@@ -1,4 +1,4 @@
-package py.com.misgruposv01.activities.ui.notifications;
+package py.com.misgruposv01.activities.ui.investigacion;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,17 +16,17 @@ import androidx.lifecycle.ViewModelProvider;
 import py.com.misgruposv01.R;
 
 
-public class NotificationsFragment extends Fragment {
+public class InvestigacionFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private InvestigacionViewModel investigacionViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        investigacionViewModel =
+                new ViewModelProvider(this).get(InvestigacionViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_investigacion, container, false);
         final TextView textView = root.findViewById(R.id.text_inicio);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        investigacionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

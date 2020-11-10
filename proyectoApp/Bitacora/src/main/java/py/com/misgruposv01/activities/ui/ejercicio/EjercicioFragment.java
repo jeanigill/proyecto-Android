@@ -1,5 +1,5 @@
 
-package py.com.misgruposv01.activities.ui.dashboard;
+package py.com.misgruposv01.activities.ui.ejercicio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,17 +16,16 @@ import androidx.lifecycle.ViewModelProvider;
 import py.com.misgruposv01.R;
 
 
-public class DashboardFragment extends Fragment {
+public class EjercicioFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private EjercicioViewModel ejercicioViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        ejercicioViewModel = new ViewModelProvider(this).get(EjercicioViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_ejercicio, container, false);
         final TextView textView = root.findViewById(R.id.text_inicio);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        ejercicioViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

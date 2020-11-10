@@ -18,6 +18,7 @@
         <activity android:name=".activities.Materia1Activity"></activity>
         <activity android:name=".activities.AddMateriaActivity"></activity>
         <activity android:name=".activities.AddBitacoraActivity"></activity>
+        <activity android:name=".activities.AddItemActivity"></activity>
         <activity android:name=".activities.MateriasListView"></activity>
         <activity android:name=".activities.MenuPrincipalActivity"></activity>
         <activity android:name=".activities.BitacorasListView" />

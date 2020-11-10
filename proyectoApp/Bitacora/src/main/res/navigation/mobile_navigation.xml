@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="py.com.misgruposv01.activities.ui.home.HomeFragment"
+        android:name="py.com.misgruposv01.activities.ui.item.ItemFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_item" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="py.com.misgruposv01.activities.ui.dashboard.DashboardFragment"
+        android:name="py.com.misgruposv01.activities.ui.ejercicio.EjercicioFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_ejercicio" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="py.com.misgruposv01.activities.ui.notifications.NotificationsFragment"
+        android:name="py.com.misgruposv01.activities.ui.investigacion.InvestigacionFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_investigacion" />
 </navigation>

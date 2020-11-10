@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ui.home.HomeFragment" >
+    tools:context=".activities.ui.investigacion.InvestigacionFragment">
 
-        <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,7 +21,7 @@
             android:layout_marginBottom="20dp"
             android:background="@color/verde_200"
             android:gravity="center"
-            android:text="ITEM"
+            android:text="INVESTIGACIONES"
             android:textSize="24dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Concepto"
+            android:text="Tiempo dedicado"
             android:textSize="20sp" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Descripción:"
+            android:text="Tema:"
             android:textSize="20sp" />
 
         <TextView
@@ -64,7 +64,39 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/nombre_dudas"
+            android:id="@+id/nombre_comentarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Comentarios:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/id_nombre_comentarios_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/nombre_comprension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Comprension:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/id_nombre_comprension_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/nombre_dudas_inves"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -72,15 +104,12 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/id_nombre_dudas_valor"
+            android:id="@+id/id_nombre_dudas_inves_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginLeft="10dp"
             android:textSize="20sp" />
-        </LinearLayout>
+    </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>
