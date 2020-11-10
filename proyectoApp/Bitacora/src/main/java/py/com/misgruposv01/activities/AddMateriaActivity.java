@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
@@ -17,11 +18,12 @@ import py.com.misgruposv01.utils.LogUtils;
 public class AddMateriaActivity extends Activity {
     private String tag = "AppConoceme";
     EditText campoNombreMateria;
-    EditText campoFecha;
-    EditText campoCodigo;
+    EditText campoId;
     int idBitacora = 0;
+    Bitacora unaBitacora= null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LogUtils.tag, "ACTIVIDAD ADD MATERIA ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_materia);
 
@@ -31,23 +33,27 @@ public class AddMateriaActivity extends Activity {
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
         }
 
+         unaBitacora = App.buscarBitacora(idBitacora);
+
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
-        campoCodigo = (EditText) findViewById(R.id.crear_id_Materia);
-        campoFecha = (EditText) findViewById(R.id.editTextDate);
+        campoId = (EditText) findViewById(R.id.crear_id_Materia);
+        //  campoFecha = (EditText) findViewById(R.id.editTextDate);
     }
 
 
     public void crearMateria (View view) {
+        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
         String nombreMateria = campoNombreMateria.getText().toString();
-        String codigoMateria = campoCodigo.getText().toString();
-        int codMateriaI = (int) (Double.parseDouble(codigoMateria));
+        String IdMateria = campoId.getText().toString();
+        int IdMateriaI = (int) (Double.parseDouble(IdMateria));
         // MateriasListView metodoBuscar = new MateriasListView();
-        Materia materia = new Materia(codMateriaI, nombreMateria);
-        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+        Materia materia = new Materia(IdMateriaI, nombreMateria);
         unaBitacora.agregarMateria(materia);
-        Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
-        Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
-        startActivity( intentLanzarMaterias );
+        Toast toast = Toast.makeText( this, "Materia agregada", Toast.LENGTH_SHORT);
+        toast.show();
+        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
+
+        finish();
     }
 
 

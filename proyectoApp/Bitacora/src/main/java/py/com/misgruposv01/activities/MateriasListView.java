@@ -62,10 +62,11 @@ public int idBitacora;
     }
 
 
-
     public void lanzarVistaAddMateria(View view){
         Intent i = new Intent(this, AddMateriaActivity.class);
         //i.putExtra("id", (long)0);
+        //i = new Intent(this, TemasListView.class);
+        i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
         startActivity(i);
     }
 }
