@@ -9,25 +9,18 @@
         android:roundIcon="@mipmap/ic_bitacora_app1_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MisGrupos2021">
-
-        <activity android:name=".activities.MainActivity"> </activity>
-
-        <activity android:name=".activities.AcercaDeActivity"> </activity>
-
-        <activity android:name=".activities.TemasListView"> </activity>
-        <activity android:name=".activities.Materia1Activity"> </activity>
-
-        <activity android:name=".activities.AddMateriaActivity"> </activity>
-
-
-        <activity android:name=".activities.AddBitacoraActivity"> </activity>
-
-
-        <activity android:name=".activities.MateriasListView"> </activity>
-        <activity android:name=".activities.MenuPrincipalActivity"> </activity>
-
-        <activity android:name=".activities.BitacorasListView"></activity>
-
+        <activity
+            android:name=".activities.VerDatosTemasActivity"
+            android:label="@string/title_activity_ver_datos_temas"></activity>
+        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.AcercaDeActivity"></activity>
+        <activity android:name=".activities.TemasListView"></activity>
+        <activity android:name=".activities.Materia1Activity"></activity>
+        <activity android:name=".activities.AddMateriaActivity"></activity>
+        <activity android:name=".activities.AddBitacoraActivity"></activity>
+        <activity android:name=".activities.MateriasListView"></activity>
+        <activity android:name=".activities.MenuPrincipalActivity"></activity>
+        <activity android:name=".activities.BitacorasListView" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
