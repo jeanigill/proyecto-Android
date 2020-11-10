@@ -1,6 +1,10 @@
 package py.com.misgruposv01.datos;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+
+import py.com.misgruposv01.utils.LogUtils;
 
 public class Bitacora {
     private ArrayList<Materia> materias;
@@ -24,7 +28,10 @@ public class Bitacora {
 //    public static void agregarMateria(Materia materia) {
 //        materias.add( materia );
 //    }
-
+public void agregarMateria (Materia materia) {
+    materias.add(materia);
+    Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
+}
 
     public Bitacora(int id, String anho) {
         this.anho = anho;

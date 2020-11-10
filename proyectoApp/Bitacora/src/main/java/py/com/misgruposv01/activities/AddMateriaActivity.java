@@ -19,11 +19,17 @@ public class AddMateriaActivity extends Activity {
     EditText campoNombreMateria;
      EditText campoFecha;
      EditText campoCodigo;
-
+    int idBitacora = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_materia);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            idBitacora = extras.getInt("idBitacora", -1);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+        }
 
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
          campoCodigo = (EditText) findViewById(R.id.crear_id_Materia);
@@ -31,18 +37,18 @@ public class AddMateriaActivity extends Activity {
     }
 
 
-//    public void crearMateria (View view) {
-//     String nombreMateria = campoNombreMateria.getText().toString();
-//     String codigoMateria = campoCodigo.getText().toString();
-//     int codMateriaI = (int) (Double.parseDouble(codigoMateria));
-//        MateriasListView metodoBuscar = new MateriasListView();
-//   Materia materia = new Materia(codMateriaI, nombreMateria);
-//   Bitacora unaBitacora = metodoBuscar.buscarBitacora();
-//     App.agregarMateria(unaBitacora, materia);
-//        Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
-//     Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
-//     startActivity( intentLanzarMaterias );
-//    }
+    public void crearMateria (View view) {
+     String nombreMateria = campoNombreMateria.getText().toString();
+     String codigoMateria = campoCodigo.getText().toString();
+     int codMateriaI = (int) (Double.parseDouble(codigoMateria));
+       // MateriasListView metodoBuscar = new MateriasListView();
+   Materia materia = new Materia(codMateriaI, nombreMateria);
+   Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+     unaBitacora.agregarMateria(materia);
+        Log.i(LogUtils.tag, "Metodo Crear Materia: "+materia.getNombre());
+     Intent intentLanzarMaterias = new Intent( this, MateriasListView.class );
+     startActivity( intentLanzarMaterias );
+    }
 
 
     public void lanzarVistaAddMateria (View view){

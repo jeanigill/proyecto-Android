@@ -132,10 +132,10 @@ public class App {
         listadoBitacoras.add(bitacora2 );
     }
 
-    public static void agregarMateria(Bitacora bitacora, Materia materia) {
-        bitacora.getMaterias().add(materia);
-        Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
-    }
+//    public static void agregarMateria(Bitacora bitacora, Materia materia) {
+//        bitacora.getMaterias().add(materia);
+//        Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
+//    }
     public static void agregarBitacora(Bitacora unaBitacora) {
         listadoBitacoras.add(unaBitacora);
         Log.i(LogUtils.tag, "Materia nueva: "+unaBitacora.getAnho());
