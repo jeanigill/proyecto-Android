@@ -13,6 +13,7 @@ import py.com.misgruposv01.datos.App;
 import py.com.misgruposv01.datos.Bitacora;
 import py.com.misgruposv01.datos.Investigacion;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
 public class AddInvestigacionActivity extends Activity {
@@ -21,8 +22,10 @@ public class AddInvestigacionActivity extends Activity {
     EditText campoTema;
     EditText campoComentarios;
     EditText campoDudas;
-    EditText campoLogrado;
-    int idInvestigacion = 0;
+        EditText campoComprension;
+    int idBitacora = 0;
+    int idMateria = 0;
+    int idTema = 0;
     int tiempoDedicadoI;
     Investigacion unaInvestigacion= null;
 
@@ -35,8 +38,12 @@ public class AddInvestigacionActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            idInvestigacion = extras.getInt("idInvestigacion", -1);
-            Log.i(LogUtils.tag, "Id recibido de la investigación: " + idInvestigacion);
+            idBitacora = extras.getInt("idBitacora", -1);
+            idMateria = extras.getInt("idMateria", -1);
+            idTema = extras.getInt("idTema", -1);
+            Log.i(LogUtils.tag, "Id recibido de la Bitacora: " + idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la Materia: " + idMateria);
+            Log.i(LogUtils.tag, "Id recibido del Tema: " + idTema);
         }
 
 //      unaBitacora = App.buscarBitacora(idInvestigacion);
@@ -45,7 +52,8 @@ public class AddInvestigacionActivity extends Activity {
         campoTema = (EditText) findViewById(R.id.crear_id_Materia);
         campoComentarios = (EditText) findViewById(R.id.crear_tiempodedi_inves);
         campoDudas = (EditText) findViewById(R.id.crear_dudas_inves);
-        campoLogrado = (EditText) findViewById(R.id.crear_logrado_inves);
+        campoComprension = (EditText) findViewById(R.id.crear_comprension_inves);
+
 
     }
 
@@ -53,28 +61,31 @@ public class AddInvestigacionActivity extends Activity {
     public void crearInvestigacion (View view) {
         Log.i(LogUtils.tag, "METODO CREAR INVESTIGACION ");
 
-        String tiempoDedicado = campoTiempoDedicado.getText().toString();
-        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicado));
+        String tiempoDedicadoS = campoTiempoDedicado.getText().toString();
+        int tiempoDedicado = (int) (Double.parseDouble(tiempoDedicadoS));
         String tema = campoTema.getText().toString();
         String comentarios = campoComentarios.getText().toString();
         String dudas = campoDudas.getText().toString();
+        String comprensionS = campoDudas.getText().toString();
+        int comprension = (int) (Double.parseDouble(comprensionS));
 
-        String ti = campoId.getText().toString();
-        int IdMateriaI = (int) (Double.parseDouble(IdMateria));
-        // MateriasListView metodoBuscar = new MateriasListView();
-        Materia materia = new Materia(IdMateriaI, nombreMateria);
-        unaBitacora.agregarMateria(materia);
-        Toast toast = Toast.makeText( this, "Materia agregada", Toast.LENGTH_SHORT);
+        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+        Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
+        Tema unTema = App.buscarTema(unaMateria, idTema);
+        Investigacion investigacion = new Investigacion (tiempoDedicado, tema, comentarios, comprension, dudas);
+        unTema.agregarInvestigacion(investigacion);
+
+        Toast toast = Toast.makeText( this, "Investigacion agregada", Toast.LENGTH_SHORT);
         toast.show();
-        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
+        Log.i(LogUtils.tag, "Investigacion creada: "+investigacion.getTema());
 
         finish();
     }
 
-
-    public void lanzarVistaAddMateria (View view){
-        Intent i = new Intent(this, AddInvestigacionActivity.class);
-        startActivity(i);
+    public void desplegarMensajeResgistroExitoso() {
+        Toast toast = Toast.makeText( this, "Registro exitoso", Toast.LENGTH_SHORT);
+        toast.show();
     }
+
 
 }

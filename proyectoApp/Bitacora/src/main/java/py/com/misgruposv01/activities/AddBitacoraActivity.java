@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
@@ -33,13 +34,40 @@ public class AddBitacoraActivity extends Activity {
         String idString = campoId.getText().toString();
         int id = (int) (Double.parseDouble(idString));
         String anho = campoAnho.getText().toString();
+        if (idString.equals("") || anho.equals("")) {
+            desplegarMensajeCamposRequeridos();
+        }else{
+//                if (modoEdicion) {
+//                    Grupo grupo = Grupo.grupos.get(idGrupo);
+//                    grupo.setNombre(nombre);
+//                    grupo.setDescripcion(objetivo);
+//
+//                    Intent intent = new Intent();
+//                    intent.putExtra("resultado", 1);
+//                    setResult(RESULT_OK, intent);
+//                    finish();
+//                }
+                    Bitacora unaBitacora = new Bitacora(id, anho);
+                    App.agregarBitacora(unaBitacora);
+                    desplegarMensajeResgistroExitoso();
 
-        Bitacora unaBitacora = new Bitacora( id, anho);
-        App.agregarBitacora(unaBitacora);
-        Log.i(LogUtils.tag, "Metodo Crear Bitacora: "+unaBitacora.getAnho());
-     Intent intentLanzarBitacoras = new Intent( this, BitacorasListView.class );
-     startActivity( intentLanzarBitacoras );
-        Log.i(LogUtils.tag, "Cantidad de bitacoras: "+App.listadoBitacoras.size());
+                    Log.i(LogUtils.tag, "Metodo Crear Bitacora: " + unaBitacora.getAnho());
+
+                    Log.i(LogUtils.tag, "Cantidad de bitacoras: " + App.listadoBitacoras.size());
+                    finish();
+                }
+            }
+
+
+    public void desplegarMensajeCamposRequeridos() {
+        Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
+        toast.show();
     }
+
+    public void desplegarMensajeResgistroExitoso() {
+        Toast toast = Toast.makeText( this, "Registro exitoso", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
 
 }

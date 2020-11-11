@@ -1,7 +1,11 @@
 package py.com.misgruposv01.datos;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Date;
+
+import py.com.misgruposv01.utils.LogUtils;
 
 public class Tema {
     private int id;
@@ -39,10 +43,18 @@ public class Tema {
 
     }
 
-//    public static void agregarGrupo( Grupo unGrupo ) {
-//        grupos.add( unGrupo );
-//    }
 
+    public void agregarInvestigacion (Investigacion investigacion) {
+        if (getInvestigaciones()==null){
+            Log.i(LogUtils.tag, "No tiene investigaciones ");
+            investigaciones.add(investigacion);
+            setInvestigaciones(investigaciones);
+        }else{
+            Log.i(LogUtils.tag, "Tamaño de ArrayListInvestigaciones"+getInvestigaciones().size());
+            getInvestigaciones().add(investigacion);
+            Log.i(LogUtils.tag, "Materia nueva: "+investigacion.getTema());
+        }
+    }
     public int getId() {
         return id;
     }

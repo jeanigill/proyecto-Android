@@ -32,4 +32,10 @@
     <string name="title_notifications">Notifications</string>
 
 
+    <!-- NEW ACTIVITY  -->
+    <string name="new_item">ITEM</string>
+    <string name="new_investigacion">INVESTIGACION</string>
+    <string name="new_ejercicio">EJERCICIO</string>
+
+
 </resources>
