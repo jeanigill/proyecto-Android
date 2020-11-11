@@ -26,7 +26,7 @@ import py.com.misgruposv01.utils.LogUtils;
 public class VerDatosTemasItemActivity extends AppCompatActivity {
     private static final String TAG = "VerDatosGrupoActivity";
     private static final int PETICION_EDITAR_GRUPO = 1;
-    private int idItem = 0;
+    private int idItem = 1;
     private Bitacora unaBitacora = null;
     private Materia unaMateria = null;
     private Tema unTema = null;
@@ -41,33 +41,35 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(LogUtils.tag, "Inicia metodo en VerDatosTemasItemActivity.onCreate");
-        setContentView(R.layout.activity_ver_datos_temas);
+        setContentView(R.layout.fragment_item);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             idMateria = extras.getInt("idMateria", -1);
             idBitacora = extras.getInt("idBitacora", -1);
-            //idItem = extras.getInt("idItem", -1);
+            idItem = extras.getInt("idItem", -1);
             idTema = extras.getInt("idTema", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             Log.i(LogUtils.tag, "Id recibido del Tema: "+ idTema);
             Log.i(LogUtils.tag, "Id recibido del item: "+ idItem);
+
         }
 
-     //   actualizarVista();
+      actualizarVista();
     }
 
     public void actualizarVista(){
+        unaBitacora = App.buscarBitacora(idBitacora);
+        unaMateria = App.buscarMateria(unaBitacora, idMateria);
+        unTema = App.buscarTema(unaMateria, idTema);
+        unItem = unTema.getItems().get(idItem);
+
         if ( idItem < 0 || idItem > (unTema.getItems().size()-1) ) {
             desplegarMensajeNoExisteGrupo();
             finish();
             return;
         }
-        unaBitacora = App.buscarBitacora(idBitacora);
-        unaMateria = App.buscarMateria(unaBitacora, idMateria);
-        unTema = App.buscarTema(unaMateria, idTema);
-        unItem = unTema.getItems().get(idItem);
 
         Concepto = (TextView) findViewById(R.id.id_nombre_concepto_valor);
         Concepto.setText( unItem.getConcepto());

@@ -52,7 +52,7 @@ import py.com.misgruposv01.utils.LogUtils;
     protected void onListItemClick (ListView l, View v, int position, long id) {
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
-        Intent i = new Intent(this, VerDatosTemasActivity.class);
+        Intent i = new Intent(this,MenuPrincipalActivity.class);
         i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
         i.putExtra("idMateria", Integer.parseInt(""+idMateria));
         i.putExtra("idTema", Integer.parseInt(""+id));

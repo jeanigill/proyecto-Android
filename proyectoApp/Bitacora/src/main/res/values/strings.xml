@@ -2,10 +2,10 @@
     <string name="app_name">Bitacora</string>
 
     <!-- Menu Principal  -->
-    <string name="boton_acerca_de">BITÁCORA</string>
-    <string name="boton_2">Proyecto TIC</string>
-    <string name="boton_3">Matemáticas</string>
-    <string name="boton_4">Alemán</string>
+    <string name="boton_new">NUEVO</string>
+    <string name="boton_item">VER ITEM</string>
+    <string name="boton_ejercicio">VER EJERCICIO</string>
+    <string name="boton_investgacion">VER INVESTIGACION</string>
     <string name="boton_5">Marketing</string>
     <string name="boton_6">Emprendedurismo</string>
 

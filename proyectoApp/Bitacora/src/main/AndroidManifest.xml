@@ -21,6 +21,7 @@
         <activity android:name=".activities.AddItemActivity"></activity>
         <activity android:name=".activities.MateriasListView"></activity>
         <activity android:name=".activities.MenuPrincipalActivity"></activity>
+        <activity android:name=".activities.VerDatosTemasItemActivity"></activity>
         <activity android:name=".activities.BitacorasListView" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
