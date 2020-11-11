@@ -160,7 +160,7 @@ public class App {
         Materia unaMateria = null;
         for (int i = 0; i < unaBitacora.getMaterias().size(); i++) {
             unaMateria = unaBitacora.getMaterias().get(i);
-            Log.i(LogUtils.tag, "Bitacoras size: "+unaBitacora.getMaterias().size());
+            Log.i(LogUtils.tag, "Materias size: "+unaBitacora.getMaterias().size());
             if (idMateria == unaMateria.getId()) {
                 i = unaBitacora.getMaterias().size();
                 Log.i(LogUtils.tag, "Materia encontrada: "+unaMateria.getNombre());
@@ -173,6 +173,39 @@ public class App {
         return null;
     }
 
+    public static Tema buscarTema ( Materia unaMateria, int idTema){
+        Tema unTema = null;
+        for (int i = 0; i < unaMateria.getTemas().size(); i++) {
+            unTema = unaMateria.getTemas().get(i);
+            Log.i(LogUtils.tag, "Temas size: "+unaMateria.getTemas().size());
+            if (idTema == unTema.getId()) {
+                i = unaMateria.getTemas().size();
+                Log.i(LogUtils.tag, "Tema encontrado: "+unTema.getNombre());
+                Log.i(LogUtils.tag, "Cantidad de Items: "+unTema.getItems().size()
+                );
+                return unTema;
+            }
+        }
+        Log.i(LogUtils.tag, "Tema null ");
+        return null;
+    }
+
+//    public static Item buscarItem ( Tema unTema, int idItem){
+//        Item unItem = null;
+//        for (int i = 0; i < unTema.getItems().size(); i++) {
+//            unItem = unTema.getItems().get(i);
+//            Log.i(LogUtils.tag, "Items size: "+unItem..getTemas().size());
+//            if (idTema == unTema.getId()) {
+//                i = unaMateria.getTemas().size();
+//                Log.i(LogUtils.tag, "Tema encontrado: "+unTema.getNombre());
+//                Log.i(LogUtils.tag, "Cantidad de Items: "+unTema.getItems().size()
+//                );
+//                return unTema;
+//            }
+//        }
+//        Log.i(LogUtils.tag, "Tema null ");
+//        return null;
+//    }
 
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;

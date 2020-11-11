@@ -53,7 +53,10 @@ import py.com.misgruposv01.utils.LogUtils;
         Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, VerDatosTemasActivity.class);
+        i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
+        i.putExtra("idMateria", Integer.parseInt(""+idMateria));
         i.putExtra("idTema", Integer.parseInt(""+id));
+
         startActivity(i);
     }
 
