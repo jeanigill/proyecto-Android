@@ -8,37 +8,97 @@
     tools:context=".activities.AddBitacoraActivity">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-3dp"
+        android:accessibilityPaneTitle="Crear Materia"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="42dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:onClick="lanzarVistaVolver"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="119dp"
-        android:layout_height="121dp"
+        android:layout_width="241dp"
+        android:layout_height="233dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="21dp"
-        android:src="@mipmap/ic_icono_materiaa_foreground" />
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="-20dp"
+        android:src="@mipmap/ic_agg_bitacora_foreground" />
 
     <EditText
         android:id="@+id/id_bitacora"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="166dp"
         android:hint="Id de la bitacora"
         android:inputType="text" />
+
     <EditText
         android:id="@+id/anho_bitacora"
-        android:layout_width="wrap_content"
+        android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/id_bitacora"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="44dp"
         android:hint="Año de la bitacora"
         android:inputType="text" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/anho_bitacora"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="73dp"
         android:onClick="crearBitacora"
+        android:shadowColor="@color/verde_200"
         android:text="@string/new_bitacora" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="9dp"
+        android:text="CREAR BITACORA"
+        android:textSize="26dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="51dp"
+        android:background="@color/colorPrimary"
+     />
 
 
 </RelativeLayout>

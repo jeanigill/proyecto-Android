@@ -8,25 +8,52 @@
     tools:context=".activities.AddEjercicioActivity">
 
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/colorPrimary" />
+
     <EditText
-        android:id="@+id/crear_tiempodedi_ejerci"
+        android:id="@+id/crear_tiempodediIni_ejerci"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="87dp"
+        android:hint="Tiempo dedicado inicio"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/crear_tiempodediFin_ejerci"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/crear_tiempodediIni_ejerci"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="103dp"
-        android:hint="Tiempo dedicado"
+        android:layout_marginTop="166dp"
+        android:hint="Tiempo dedicado fin"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/crear_experiencias_ejer"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/crear_tiempodedi_ejerci"
+        android:layout_below="@+id/crear_tiempodediFin_ejerci"
         android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="45dp"
         android:hint="Experiencias"
         android:inputType="text" />
 
@@ -36,8 +63,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/crear_experiencias_ejer"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="46dp"
         android:hint="Dudas"
         android:inputType="text" />
 
@@ -47,22 +75,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/crear_dudas_ejer"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="45dp"
+        android:hint="Logrado"
+        android:inputType="text"
         android:textAlignment="center"
         android:textSize="24dp"
-        android:textStyle="bold"
-        android:hint="Logrado"
-        android:inputType="text" />
-
-
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-6dp"
         android:accessibilityPaneTitle="Crear Materia"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
@@ -93,7 +122,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:text="Crear Ejercicio"
         android:textSize="26dp" />
 
@@ -104,7 +133,7 @@
         android:layout_below="@id/crear_logrado_ejer"
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="18dp" />
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="31dp" />
 
 </RelativeLayout>

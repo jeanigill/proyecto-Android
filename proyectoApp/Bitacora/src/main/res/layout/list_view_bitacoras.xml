@@ -6,6 +6,16 @@
     >
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="51dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
         android:id="@+id/crear_cuenta_titulo"
         android:layout_width="match_parent"
         android:layout_height="61dp"
@@ -18,27 +28,27 @@
 
     <ListView
         android:id="@android:id/list"
-        android:layout_width="408dp"
-        android:layout_height="622dp"
+        android:layout_width="412dp"
+        android:layout_height="463dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="51dp"></ListView>
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="95dp"></ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button"
-        android:layout_width="87dp"
-        android:layout_height="80dp"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|end"
         android:layout_marginStart="264dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="48dp"
         android:background="@color/verde_200"
         android:contentDescription="add_butt"
         android:onClick="lanzarVistaAddBitacora"

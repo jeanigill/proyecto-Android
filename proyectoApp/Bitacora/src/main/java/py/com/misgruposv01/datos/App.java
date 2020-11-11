@@ -55,11 +55,11 @@ public class App {
     public static ArrayList<Ejercicio> ejercicios1 = new ArrayList<>();
 
     static {
-        ejercicio1 = new Ejercicio (90, "Aprendí que una " +
+        ejercicio1 = new Ejercicio (90, 80 ,"Aprendí que una " +
                 "clase puede tener varios constructores.", "¿Para qué sirve la palabra reservada static?", 80);
-        ejercicio2 = new Ejercicio (30, "buena", "", 100);
-        ejercicio3 = new Ejercicio (60, "muy larga", "No pude terminar", 30);
-        ejercicio4 = new Ejercicio (20, "rápida", "ninguna", 100);
+        ejercicio2 = new Ejercicio (30, 80, "buena", "", 100);
+        ejercicio3 = new Ejercicio (60, 80, "muy larga", "No pude terminar", 30);
+        ejercicio4 = new Ejercicio (20, 80, "rápida", "ninguna", 100);
         ejercicios1.add(ejercicio1);
         ejercicios1.add(ejercicio2);
         ejercicios1.add(ejercicio3);

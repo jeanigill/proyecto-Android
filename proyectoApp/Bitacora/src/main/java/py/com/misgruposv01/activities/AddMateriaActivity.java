@@ -1,13 +1,18 @@
 package py.com.misgruposv01.activities;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
@@ -19,6 +24,7 @@ public class AddMateriaActivity extends Activity {
     private String tag = "AppConoceme";
     EditText campoNombreMateria;
     EditText campoId;
+    EditText campoFechaMateria;
     int idBitacora = 0;
     Bitacora unaBitacora= null;
     @Override
@@ -37,6 +43,15 @@ public class AddMateriaActivity extends Activity {
 
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
         campoId = (EditText) findViewById(R.id.crear_id_Materia);
+        campoFechaMateria = (EditText) findViewById(R.id.editText);
+
+        campoFechaMateria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarFecha(campoFechaMateria);
+            }
+        });
+
     }
 
 
@@ -80,13 +95,34 @@ public class AddMateriaActivity extends Activity {
         toast.show();
         Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
     }
+
     public void lanzarVistaAddMateria (View view){
         Intent i = new Intent(this, AddMateriaActivity.class);
         startActivity(i);
     }
+
     public void desplegarMensajeCamposRequeridos() {
         Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
         toast.show();
     }
 
+    private void mostrarFecha(final EditText campoFechaMateria) {
+        final Calendar calendar=Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR,year);
+                calendar.set(Calendar.MONTH,month);
+                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd");
+                campoFechaMateria.setText(simpleDateFormat.format(calendar.getTime()));
+
+            }
+        };
+
+        new DatePickerDialog(AddMateriaActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
 }
+
+

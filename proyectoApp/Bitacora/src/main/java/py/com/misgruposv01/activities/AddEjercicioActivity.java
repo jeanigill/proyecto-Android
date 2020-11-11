@@ -18,8 +18,10 @@ import py.com.misgruposv01.utils.LogUtils;
 
 public class AddEjercicioActivity extends Activity {
     private String tag = "AppConoceme";
-    EditText campotiempoDedicado;
+    EditText campotiempoDedicadoIni;
+    EditText campotiempoDedicadoFin;
     int tiempoDedicadoI;
+    int tiempoDedidcadoII;
     EditText campoexperiencia;
     EditText campodudas;
     EditText campologrado;
@@ -42,7 +44,8 @@ public class AddEjercicioActivity extends Activity {
 
     //    unTema = App.buscarTema(idTema);
 
-        campotiempoDedicado = (EditText) findViewById(R.id.crear_tiempodedi_ejerci);
+        campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
+        campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
         campoexperiencia = (EditText) findViewById(R.id.crear_experiencias_ejer);
         campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
         campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
@@ -52,8 +55,10 @@ public class AddEjercicioActivity extends Activity {
 
     public void crearEjercicio (View view) {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
-        String tiempoDedicado = campotiempoDedicado.getText().toString();
-        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicado));
+        String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
+        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
+        String tiempoDedicadoFin = campotiempoDedicadoFin.getText().toString();
+        int tiempoDedicadoII = (int) (Double.parseDouble(tiempoDedicadoFin));
         String experiencia = campoexperiencia.getText().toString();
         String duda = campodudas.getText().toString();
         String logrado = campologrado.getText().toString();

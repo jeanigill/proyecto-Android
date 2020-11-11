@@ -14,12 +14,13 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="10dp"
+		android:src="@mipmap/ic_agg_bitacora_foreground"
  />
     
     <TextView android:id="@+id/nombre_elemento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:textSize="20sp"
+		android:textSize="35dp"
 	    android:layout_toRightOf="@id/logo_bitacora"
 	    />
 

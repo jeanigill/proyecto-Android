@@ -3,7 +3,8 @@ package py.com.misgruposv01.datos;
 import java.util.Date;
 
 public class Ejercicio {
-    private int tiempoDedicado;
+    private int tiempoDedicadoIni;
+    private int tiempoDedicadoFin;
     private String experiencia;
     private String dudas;
     private int logrado;
@@ -18,20 +19,31 @@ public class Ejercicio {
 //        grupos.add( new Grupo("Estudiantes Programación", "Grupo para compartir conocimientos sobre Programación", 0.0, 0.0, unUsuario));
 //    }
 //
-    public Ejercicio(int tiempoDedicado, String experiencia, String dudas, int logrado) {
-        this.tiempoDedicado= tiempoDedicado;
+    public Ejercicio(int tiempoDedicadoIni, int tiempoDedicadoFin,  String experiencia, String dudas, int logrado) {
+        this.tiempoDedicadoIni= tiempoDedicadoIni;
+        this.tiempoDedicadoFin = tiempoDedicadoFin;
         this.experiencia = experiencia;
         this.dudas = dudas;
         this.logrado = logrado;
     }
 
-    public int getTiempoDedicado() {
-        return tiempoDedicado;
+    public int getTiempoDedicadoIni() {
+        return tiempoDedicadoIni;
     }
 
-    public void setTiempoDedicado(int tiempoDedicado) {
-        this.tiempoDedicado = tiempoDedicado;
+    public void setTiempoDedicadoIni(int tiempoDedicadoIni) {
+        this.tiempoDedicadoIni = tiempoDedicadoIni;
     }
+
+
+    public int getTiempoDedicadoFin() {
+        return tiempoDedicadoFin;
+    }
+
+    public void setTiempoDedicadoFin(int tiempoDedicadoFin) {
+        this.tiempoDedicadoFin = tiempoDedicadoFin;
+    }
+
 
     public String getExperiencia() {
         return experiencia;

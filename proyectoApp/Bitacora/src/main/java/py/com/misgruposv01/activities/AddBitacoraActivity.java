@@ -69,5 +69,14 @@ public class AddBitacoraActivity extends Activity {
         toast.show();
     }
 
+    public void desplegarMensajeCancelado() {
+        Toast toast = Toast.makeText( this, "La carga fue cancelada", Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
+    public void lanzarVistaVolver (View view){
+        Intent i = new Intent(this, BitacorasListView.class);
+        desplegarMensajeCancelado();
+        startActivity(i);
+    }
 }

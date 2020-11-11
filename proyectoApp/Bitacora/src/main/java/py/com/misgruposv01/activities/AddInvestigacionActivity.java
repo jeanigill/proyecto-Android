@@ -1,12 +1,20 @@
 package py.com.misgruposv01.activities;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
@@ -49,11 +57,19 @@ public class AddInvestigacionActivity extends Activity {
 //      unaBitacora = App.buscarBitacora(idInvestigacion);
 
         campoTiempoDedicado = (EditText) findViewById(R.id.crear_tiempodedi_inves);
+        campoTiempoDedicado.setInputType(InputType.TYPE_NULL);
         campoTema = (EditText) findViewById(R.id.crear_id_Materia);
         campoComentarios = (EditText) findViewById(R.id.crear_tiempodedi_inves);
         campoDudas = (EditText) findViewById(R.id.crear_dudas_inves);
         campoComprension = (EditText) findViewById(R.id.crear_comprension_inves);
 
+
+        campoTiempoDedicado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarFechaHora(campoTiempoDedicado);
+            }
+        });
 
     }
 
@@ -87,5 +103,34 @@ public class AddInvestigacionActivity extends Activity {
         toast.show();
     }
 
+
+    private void mostrarFechaHora(final EditText date_time_in) {
+        final Calendar calendar=Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR,year);
+                calendar.set(Calendar.MONTH,month);
+                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+
+                TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
+                        calendar.set(Calendar.MINUTE,minute);
+
+                        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd HH:mm");
+
+                        date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+                    }
+                };
+
+                new TimePickerDialog(AddInvestigacionActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+            }
+        };
+
+        new DatePickerDialog(AddInvestigacionActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+
+    }
 
 }
