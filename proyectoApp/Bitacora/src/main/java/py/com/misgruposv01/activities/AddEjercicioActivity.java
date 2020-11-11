@@ -76,8 +76,6 @@ public class AddEjercicioActivity extends Activity {
 
     }
 
-<<<<<<< HEAD
-
     public void crearEjercicio (View view) {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
         String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
@@ -99,8 +97,8 @@ public class AddEjercicioActivity extends Activity {
         Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
         finish();
     }
-=======
-//
+
+    //
 //    public void crearEjercicio (View view) {
 //        Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
 //        String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
@@ -122,7 +120,6 @@ public class AddEjercicioActivity extends Activity {
 //        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicado());
 //        finish();
 //    }
->>>>>>> 6bdb546ef7e60f26168c7c6c3a3e373c427e91ff
 
 
     public void lanzarVistaAddEjercicio (View view){
