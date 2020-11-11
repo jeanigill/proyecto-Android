@@ -39,9 +39,13 @@ import py.com.misgruposv01.utils.LogUtils;
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             unaBitacora = App.buscarBitacora(idBitacora);
             unaMateria = App.buscarMateria(unaBitacora, idMateria);
-            Log.i(LogUtils.tag, "Materias Size: " + unaMateria.getTemas().size());
-            setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
         }else{
+            if (unaMateria.getTemas() == null){
+                Toast.makeText(this, "Todavía no hay temas cargados", Toast.LENGTH_SHORT).show();
+            }else {
+                Log.i(LogUtils.tag, "Materias Size: " + unaMateria.getTemas().size());
+                setListAdapter(new TemaAdaptador(this, unaMateria.getTemas()));
+            }
             Log.i(LogUtils.tag, "Log es NULL" );
         }
 

@@ -76,6 +76,7 @@ public class AddEjercicioActivity extends Activity {
 
     }
 
+<<<<<<< HEAD
 
     public void crearEjercicio (View view) {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
@@ -98,6 +99,30 @@ public class AddEjercicioActivity extends Activity {
         Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
         finish();
     }
+=======
+//
+//    public void crearEjercicio (View view) {
+//        Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
+//        String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
+//        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
+//        String tiempoDedicadoFin = campotiempoDedicadoFin.getText().toString();
+//        int tiempoDedicadoII = (int) (Double.parseDouble(tiempoDedicadoFin));
+//        String experiencia = campoexperiencia.getText().toString();
+//        String duda = campodudas.getText().toString();
+//        String logrado = campologrado.getText().toString();
+//        int logradoI = (int) (Double.parseDouble(logrado));
+//
+//
+//        // MateriasListView metodoBuscar = new MateriasListView();
+//        // Ejercicio unEjercicio = new Ejercicio(tiempoDedicadoI, experiencia , duda , logradoI);
+//        // unEjercicio.agregarEjercicio(ejercicio);
+//
+//        Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
+//        toast.show();
+//        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicado());
+//        finish();
+//    }
+>>>>>>> 6bdb546ef7e60f26168c7c6c3a3e373c427e91ff
 
 
     public void lanzarVistaAddEjercicio (View view){
