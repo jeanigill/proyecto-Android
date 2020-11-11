@@ -92,7 +92,7 @@ public class App {
         items1.add(item2);
         items1.add(item3);
         items1.add(item4);
-
+        Log.i(LogUtils.tag, "Cantidad de items de POO: "+items1.size());
         tema1 = new Tema (1, "Programación Orientada a Objetos", items1, investigaciones1, ejercicios1);
         tema2 = new Tema (2, "Tema 2",items1, investigaciones1, ejercicios1);
         tema3 = new Tema (3, "Tema 3",items1, investigaciones1, ejercicios1);
