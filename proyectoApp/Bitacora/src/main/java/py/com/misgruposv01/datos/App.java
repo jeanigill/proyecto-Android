@@ -206,6 +206,20 @@ public class App {
 //        return null;
 //    }
 
+
+    public static void agregarMateria (Bitacora bitacora, Materia materia) {
+        if (bitacora.getMaterias()==null){
+            Log.i(LogUtils.tag, "No tiene materias ");
+            ArrayList<Materia> materias = new ArrayList<>();
+            materias.add(materia);
+            bitacora.setMaterias(materias);
+        }else{
+            Log.i(LogUtils.tag, "Tamaño de ArrayListMaterias"+bitacora.getMaterias().size());
+            bitacora.getMaterias().add(materia);
+            Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
+        }
+    }
+
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;
     }

@@ -40,20 +40,20 @@ public class AddItemActivity extends Activity {
     }
 
 
-    public void crearMateria (View view) {
-        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
-        String nombreMateria = campoNombreMateria.getText().toString();
-        String IdMateria = campoId.getText().toString();
-        int IdMateriaI = (int) (Double.parseDouble(IdMateria));
-        // MateriasListView metodoBuscar = new MateriasListView();
-        Materia materia = new Materia(IdMateriaI, nombreMateria);
-        unaBitacora.agregarMateria(materia);
-        Toast toast = Toast.makeText( this, "Materia agregada", Toast.LENGTH_SHORT);
-        toast.show();
-        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
-
-        finish();
-    }
+//    public void crearMateria (View view) {
+//        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
+//        String nombreMateria = campoNombreMateria.getText().toString();
+//        String IdMateria = campoId.getText().toString();
+//        int IdMateriaI = (int) (Double.parseDouble(IdMateria));
+//        // MateriasListView metodoBuscar = new MateriasListView();
+//        Materia materia = new Materia(IdMateriaI, nombreMateria);
+//        unaBitacora.agregarMateria(materia);
+//        Toast toast = Toast.makeText( this, "Materia agregada", Toast.LENGTH_SHORT);
+//        toast.show();
+//        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
+//
+//        finish();
+//    }
 
 
     public void lanzarVistaAddMateria (View view){

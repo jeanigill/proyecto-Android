@@ -37,20 +37,42 @@ public class AddMateriaActivity extends Activity {
 
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
         campoId = (EditText) findViewById(R.id.crear_id_Materia);
-        //  campoFecha = (EditText) findViewById(R.id.editTextDate);
     }
 
 
     public void crearMateria (View view) {
         Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
         String nombreMateria = campoNombreMateria.getText().toString();
-        String IdMateria = campoId.getText().toString();
-        int IdMateriaI = (int) (Double.parseDouble(IdMateria));
-        Materia materia = new Materia(IdMateriaI, nombreMateria);
-        unaBitacora.agregarMateria(materia);
-        mensajeMateriaCreada(materia);
+        String idMateria = campoId.getText().toString();
+        int idMateriaI = (int) (Double.parseDouble(idMateria));
 
-        finish();
+        if (nombreMateria.equals("") || idMateria.equals("")) {
+            desplegarMensajeCamposRequeridos();
+        } else {
+//            if ( modoEdicion ) {
+//                Grupo grupo = Grupo.grupos.get( idGrupo );
+//                grupo.setNombre( nombre );
+//                grupo.setDescripcion( objetivo );
+//
+//                Intent intent = new Intent();
+//                intent.putExtra("resultado", 1);
+//                setResult(RESULT_OK, intent);
+//                finish();
+//            } else {
+            Materia materia = new Materia(idMateriaI, nombreMateria);
+            if (materia == null){
+                Log.i(LogUtils.tag, "Materia null ");
+            }else{
+                App.agregarMateria(unaBitacora, materia);
+                mensajeMateriaCreada(materia);
+                finish();
+            }
+
+            Intent intent = new Intent();
+            intent.putExtra("resultado", 10);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 
     public void mensajeMateriaCreada(Materia materia){
@@ -61,6 +83,10 @@ public class AddMateriaActivity extends Activity {
     public void lanzarVistaAddMateria (View view){
         Intent i = new Intent(this, AddMateriaActivity.class);
         startActivity(i);
+    }
+    public void desplegarMensajeCamposRequeridos() {
+        Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 }

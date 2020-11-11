@@ -30,17 +30,17 @@ public class Bitacora {
 //    materias.add(materia);
 //    Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
 //}
-    public void agregarMateria (Materia materia) {
-        if (getMaterias()==null){
-            Log.i(LogUtils.tag, "No tiene materias ");
-            materias.add(materia);
-            setMaterias(materias);
-        }else{
-            Log.i(LogUtils.tag, "Tamaño de ArrayListMaterias"+getMaterias().size());
-            getMaterias().add(materia);
-            Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
-        }
-    }
+//    public void agregarMateria (Materia materia) {
+//        if (getMaterias()==null){
+//            Log.i(LogUtils.tag, "No tiene materias ");
+//            materias.add(materia);
+//            setMaterias(materias);
+//        }else{
+//            Log.i(LogUtils.tag, "Tamaño de ArrayListMaterias"+getMaterias().size());
+//            getMaterias().add(materia);
+//            Log.i(LogUtils.tag, "Materia nueva: "+materia.getNombre());
+//        }
+//    }
 
     public Bitacora(int id, String anho) {
         this.anho = anho;

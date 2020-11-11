@@ -35,8 +35,14 @@ public int idBitacora;
         }
 
         Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+        if (unaBitacora.getMaterias() == null){
+            Toast.makeText(this, "Todavía no hay materias registradas", Toast.LENGTH_SHORT).show();
+           // createSimpleDialog();
+        }else{
+            setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
+        }
 
-        setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
+
 
 
 
