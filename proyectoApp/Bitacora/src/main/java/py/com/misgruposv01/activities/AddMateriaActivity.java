@@ -59,7 +59,7 @@ public class AddMateriaActivity extends Activity {
         Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
         String nombreMateria = campoNombreMateria.getText().toString();
         String idMateria = campoId.getText().toString();
-        int idMateriaI = (int) (Double.parseDouble(idMateria));
+
 
         if (nombreMateria.equals("") || idMateria.equals("")) {
             desplegarMensajeCamposRequeridos();
@@ -74,6 +74,7 @@ public class AddMateriaActivity extends Activity {
 //                setResult(RESULT_OK, intent);
 //                finish();
 //            } else {
+            int idMateriaI = (int) (Double.parseDouble(idMateria));
             Materia materia = new Materia(idMateriaI, nombreMateria);
             if (materia == null){
                 Log.i(LogUtils.tag, "Materia null ");
@@ -94,11 +95,6 @@ public class AddMateriaActivity extends Activity {
         Toast toast = Toast.makeText( this, "Materia creada", Toast.LENGTH_SHORT);
         toast.show();
         Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
-    }
-
-    public void lanzarVistaAddMateria (View view){
-        Intent i = new Intent(this, AddMateriaActivity.class);
-        startActivity(i);
     }
 
     public void desplegarMensajeCamposRequeridos() {
