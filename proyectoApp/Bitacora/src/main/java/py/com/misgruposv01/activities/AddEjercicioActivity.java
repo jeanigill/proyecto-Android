@@ -1,12 +1,18 @@
 package py.com.misgruposv01.activities;
 
 import android.app.Activity;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
@@ -50,6 +56,24 @@ public class AddEjercicioActivity extends Activity {
         campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
         campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
 
+        campotiempoDedicadoIni.setInputType(InputType.TYPE_NULL);
+        campotiempoDedicadoFin.setInputType(InputType.TYPE_NULL);
+
+
+        campotiempoDedicadoIni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarHora(campotiempoDedicadoIni);
+            }
+        });
+
+        campotiempoDedicadoFin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarHora(campotiempoDedicadoFin);
+            }
+        });
+
     }
 
 
@@ -71,7 +95,7 @@ public class AddEjercicioActivity extends Activity {
 
         Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
         toast.show();
-        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicado());
+        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
         finish();
     }
 
@@ -91,6 +115,22 @@ public class AddEjercicioActivity extends Activity {
     public void desplegarMensajeVolver() {
         Toast toast = Toast.makeText( this, "Carga cancelada", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    private void mostrarHora(final EditText time_in) {
+        final Calendar calendar=Calendar.getInstance();
+
+        TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
+                calendar.set(Calendar.MINUTE,minute);
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("HH:mm");
+                time_in.setText(simpleDateFormat.format(calendar.getTime()));
+            }
+        };
+
+        new TimePickerDialog(AddEjercicioActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
     }
 }
 
