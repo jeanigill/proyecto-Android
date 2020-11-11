@@ -140,7 +140,6 @@ public class App {
         listadoBitacoras.add(unaBitacora);
         Log.i(LogUtils.tag, "Materia nueva: "+unaBitacora.getAnho());
     }
-
     public static Bitacora buscarBitacora (int idBitacora) {
         Bitacora unaBitacora = null;
         for (int i = 0; i < listadoBitacoras.size(); i++) {

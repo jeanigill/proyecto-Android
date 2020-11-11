@@ -57,10 +57,6 @@ public class Ejercicio {
         this.logrado = logrado;
     }
 
-    //
-//    public static void agregarGrupo( Grupo unGrupo ) {
-//        grupos.add( unGrupo );
-//    }
 //
 //    public String getNombre() {
 //        return nombre;
