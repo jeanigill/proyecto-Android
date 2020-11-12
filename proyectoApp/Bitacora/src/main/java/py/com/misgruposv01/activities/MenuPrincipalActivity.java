@@ -24,6 +24,7 @@ public class MenuPrincipalActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+        Log.i(LogUtils.tag, "Inicia metodo en Menu Principal: ");
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             idMateria = extras.getInt("idMateria", -1);
@@ -71,6 +72,28 @@ public class MenuPrincipalActivity extends Activity {
                     .setNegativeButton("Cancelar", null)
                     .show();
     }
+
+    public void lanzarVistaVerEjercicio (View view){
+        final EditText entrada = new EditText(this);
+        entrada.setText("0");
+        new AlertDialog.Builder(this)
+                .setTitle("Selección de ejercicio")
+                .setMessage("Indica su id:")
+                .setView(entrada)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        int id = Integer.parseInt( entrada.getText().toString());
+                        Intent i = new Intent( MenuPrincipalActivity.this, VerDatosEjerciciosActivity.class);
+                        i.putExtra("idEjercicio", id);
+                        i.putExtra("idBitacora", idBitacora);
+                        i.putExtra("idMateria", idMateria);
+                        i.putExtra("idTema", idTema);
+                        startActivity( i );
+                    }})
+                .setNegativeButton("Cancelar", null)
+                .show();
+    }
+
     public void lanzarVistaNew (View view){
         Intent i = new Intent(this, NewActivity.class);
         i.putExtra("idBitacora", idBitacora);
