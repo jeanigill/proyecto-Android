@@ -124,13 +124,13 @@ public class AddEjercicioActivity extends Activity {
 
     public void lanzarVistaAddEjercicio (View view){
         Intent i = new Intent(this, AddEjercicioActivity.class);
-        desplegarMensajeVolver();
         startActivity(i);
     }
 
     //Cargar el menu donde se tiene que llevar de vuelta
     public void lanzarVistaVolver (View view){
-        Intent i = new Intent(this, TemasListView.class);
+        Intent i = new Intent(this, MenuPrincipalActivity.class);
+        desplegarMensajeVolver();
         startActivity(i);
     }
 
