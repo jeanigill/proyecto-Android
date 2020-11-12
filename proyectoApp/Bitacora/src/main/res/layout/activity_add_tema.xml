@@ -125,7 +125,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-19dp"
         android:layout_marginEnd="-15dp"
-        android:onClick="crearMateria"
+        android:onClick="crearTema"
         android:src="@mipmap/ic_icono_save_foreground" />
 
     <TextView

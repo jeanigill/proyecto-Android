@@ -43,6 +43,8 @@ public class AddTemaActivity extends Activity {
             idMateria = extras.getInt("idMateria", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
+        }else{
+            Log.i(LogUtils.tag, "Extras es null" );
         }
 
          unaBitacora = App.buscarBitacora(idBitacora);
@@ -63,7 +65,7 @@ public class AddTemaActivity extends Activity {
 
 
     public void crearTema (View view) {
-        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
+        Log.i(LogUtils.tag, "METODO CREAR TEMA ");
         String nombreTema = campoNombre.getText().toString();
         String idTemaS = campoId.getText().toString();
         String fecha = campoFecha.getText().toString();

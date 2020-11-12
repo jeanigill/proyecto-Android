@@ -65,7 +65,7 @@ import py.com.misgruposv01.utils.LogUtils;
     }
 
      public void lanzarVistaAddTema(View view){
-         Intent i = new Intent(this, AddMateriaActivity.class);
+         Intent i = new Intent(this, AddTemaActivity.class);
          //i.putExtra("id", (long)0);
          i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
          i.putExtra("idMateria", Integer.parseInt(""+idMateria));

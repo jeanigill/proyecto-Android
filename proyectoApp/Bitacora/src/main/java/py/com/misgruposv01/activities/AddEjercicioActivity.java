@@ -58,31 +58,31 @@ public class AddEjercicioActivity extends AppCompatActivity {
             Log.i(LogUtils.tag, "Id recibido del Tema: " + idTema);
         }
 
-    //    unTema = App.buscarTema(idTema);
+      //  unTema = App.buscarTema();
 
-//        campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
-//        campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
-//        campoexperiencia = (EditText) findViewById(R.id.crear_experiencias_ejer);
-//        campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
-//        campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
-//
-//        campotiempoDedicadoIni.setInputType(InputType.TYPE_NULL);
-//        campotiempoDedicadoFin.setInputType(InputType.TYPE_NULL);
-//
-//
-//        campotiempoDedicadoIni.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mostrarHora(campotiempoDedicadoIni);
-//            }
-//        });
-//
-//        campotiempoDedicadoFin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mostrarHora(campotiempoDedicadoFin);
-//            }
-//        });
+        campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
+        campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
+        campoexperiencia = (EditText) findViewById(R.id.crear_experiencias_ejer);
+        campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
+        campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
+
+        campotiempoDedicadoIni.setInputType(InputType.TYPE_NULL);
+        campotiempoDedicadoFin.setInputType(InputType.TYPE_NULL);
+
+
+        campotiempoDedicadoIni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarHora(campotiempoDedicadoIni);
+            }
+        });
+
+        campotiempoDedicadoFin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarHora(campotiempoDedicadoFin);
+            }
+        });
 
     }
 

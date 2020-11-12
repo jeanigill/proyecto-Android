@@ -145,7 +145,6 @@ public class App {
         for (int i = 0; i < listadoBitacoras.size(); i++) {
             unaBitacora = listadoBitacoras.get(i);
             if (idBitacora == unaBitacora.getId()) {
-                i = listadoBitacoras.size();
                 Log.i(LogUtils.tag, "Bitacora encontrada: "+unaBitacora.getAnho());
                 return unaBitacora;
             }
