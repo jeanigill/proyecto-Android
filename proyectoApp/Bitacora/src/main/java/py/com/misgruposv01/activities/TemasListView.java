@@ -37,11 +37,11 @@ import py.com.misgruposv01.utils.LogUtils;
             idBitacora = extras.getInt("idBitacora", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
-            unaBitacora = App.buscarBitacora(idBitacora);
-            unaMateria = App.buscarMateria(unaBitacora, idMateria);
+
         }
-        
-            if (unaMateria.getTemas() == null){
+        unaBitacora = App.buscarBitacora(idBitacora);
+        unaMateria = App.buscarMateria(unaBitacora, idMateria);
+            if (unaMateria.getTemas() == null ||unaMateria.getTemas().size()==0){
                 Toast.makeText(this, "Todavía no hay temas cargados", Toast.LENGTH_SHORT).show();
             }else {
                 Log.i(LogUtils.tag, "Materias Size: " + unaMateria.getTemas().size());

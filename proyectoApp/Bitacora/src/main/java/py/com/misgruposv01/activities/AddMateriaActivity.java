@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import py.com.misgruposv01.R;
@@ -75,7 +76,8 @@ public class AddMateriaActivity extends Activity {
 //                finish();
 //            } else {
             int idMateriaI = (int) (Double.parseDouble(idMateria));
-            Materia materia = new Materia(idMateriaI, nombreMateria);
+            ArrayList<Materia> materias = new ArrayList<>();
+            Materia materia = new Materia(idMateriaI, nombreMateria, materias);
             if (materia == null){
                 Log.i(LogUtils.tag, "Materia null ");
             }else{

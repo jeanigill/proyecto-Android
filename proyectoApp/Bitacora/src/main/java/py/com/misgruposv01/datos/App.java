@@ -111,7 +111,7 @@ public class App {
         materia4 = new Materia (4, "Materia 4", temas3);
         materia5 = new Materia (5, "Materia 5", temas3);
         materia6 = new Materia (6, "Materia 6", temas3);
-        materia7 = new Materia (7, "Materia 7", temas3);
+        materia7 = new Materia (7, "Materia 7");
 
         listadoMaterias1.add(materia1);
         listadoMaterias1.add(materia2);
@@ -163,8 +163,7 @@ public class App {
             if (idMateria == unaMateria.getId()) {
                 i = unaBitacora.getMaterias().size();
                 Log.i(LogUtils.tag, "Materia encontrada: "+unaMateria.getNombre());
-                Log.i(LogUtils.tag, "Cantidad de temas: "+unaMateria.getTemas().size()
-                );
+                Log.i(LogUtils.tag, "Cantidad de temas: "+unaMateria.getTemas().size());
                 return unaMateria;
             }
         }
