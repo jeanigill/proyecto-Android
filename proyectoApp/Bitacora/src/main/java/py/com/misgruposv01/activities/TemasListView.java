@@ -39,7 +39,8 @@ import py.com.misgruposv01.utils.LogUtils;
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             unaBitacora = App.buscarBitacora(idBitacora);
             unaMateria = App.buscarMateria(unaBitacora, idMateria);
-        }else{
+        }
+        
             if (unaMateria.getTemas() == null){
                 Toast.makeText(this, "Todavía no hay temas cargados", Toast.LENGTH_SHORT).show();
             }else {
@@ -49,7 +50,6 @@ import py.com.misgruposv01.utils.LogUtils;
             Log.i(LogUtils.tag, "Log es NULL" );
         }
 
-    }
 
 
     @Override
