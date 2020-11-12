@@ -5,10 +5,14 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,7 +26,7 @@ import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
-public class AddTemaActivity extends Activity {
+public class AddTemaActivity extends AppCompatActivity {
     private String tag = "AppConoceme";
     EditText campoId;
     EditText campoNombre;
@@ -63,6 +67,33 @@ public class AddTemaActivity extends Activity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.crear_menu_limpiar, menu);
+        //return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.item_guardar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Guardar");
+                        crearTema();
+                break;
+            }case R.id.item_limpiar:{
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
+    public void limpiarCampos(){
+        campoFecha.setText("");
+        campoId.setText("");
+        campoNombre.setText("");
+    }
 
     public void crearTema (View view) {
         Log.i(LogUtils.tag, "METODO CREAR TEMA ");
@@ -85,6 +116,43 @@ public class AddTemaActivity extends Activity {
 //            } else {
             int idTemaI = (int) (Double.parseDouble(idTemaS));
           //  ArrayList<Tema> temas = new ArrayList<>();
+            Tema tema = new Tema(idTemaI, nombreTema);
+            if (tema == null){
+                Log.i(LogUtils.tag, "Materia null ");
+            }else{
+                App.agregarTema(unaMateria, tema);
+                mensajeTemaCreado(tema);
+                Log.i(LogUtils.tag, "Nombre del tema nuevo: "+tema.getNombre());
+                finish();
+            }
+
+            Intent intent = new Intent();
+            intent.putExtra("resultado", 10);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+    }
+    public void crearTema () {
+        Log.i(LogUtils.tag, "METODO CREAR TEMA ");
+        String nombreTema = campoNombre.getText().toString();
+        String idTemaS = campoId.getText().toString();
+        String fecha = campoFecha.getText().toString();
+
+        if (nombreTema.equals("") || idTemaS.equals("") || fecha.equals("")) {
+            desplegarMensajeCamposRequeridos();
+        } else {
+//            if ( modoEdicion ) {
+//                Grupo grupo = Grupo.grupos.get( idGrupo );
+//                grupo.setNombre( nombre );
+//                grupo.setDescripcion( objetivo );
+//
+//                Intent intent = new Intent();
+//                intent.putExtra("resultado", 1);
+//                setResult(RESULT_OK, intent);
+//                finish();
+//            } else {
+            int idTemaI = (int) (Double.parseDouble(idTemaS));
+            //  ArrayList<Tema> temas = new ArrayList<>();
             Tema tema = new Tema(idTemaI, nombreTema);
             if (tema == null){
                 Log.i(LogUtils.tag, "Materia null ");
