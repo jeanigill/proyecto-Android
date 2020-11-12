@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -76,7 +78,7 @@ public class AddEjercicioActivity extends Activity {
 
     }
 
-    public void crearEjercicio (View view) {
+    public void crearEjercicio () {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
         String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
         int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
@@ -153,6 +155,37 @@ public class AddEjercicioActivity extends Activity {
         };
 
         new TimePickerDialog(AddEjercicioActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.crear_menu_limpiar, menu);
+        //return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.item_guardar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Guardar");
+                crearEjercicio();
+                break;
+            }case R.id.item_limpiar:{
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
+    public void limpiarCampos(){
+        campotiempoDedicadoIni.setText("");
+        campotiempoDedicadoFin.setText("");
+        campodudas.setText("");
+        campoexperiencia.setText("");
     }
 }
 

@@ -37,6 +37,11 @@
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
 
+            <ImageView
+                android:id="@+id/tipo_tarjeta_imagen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/star_big_on" />
             <TextView
                 android:id="@+id/nombre_Descrip"
                 android:layout_width="wrap_content"
