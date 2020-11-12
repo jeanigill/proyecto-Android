@@ -62,48 +62,47 @@ public class AddTemaActivity extends Activity {
     }
 
 
-//    public void crearTema (View view) {
-//        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
-//        String nombreTema = campoNombre.getText().toString();
-//        String idTexmaS = campoId.getText().toString();
-//        String fecha = campoFecha.getText().toString();
-//        //Date fechaNac = (Date.valueOf(fechaS);
-//        //fechaS.split("-");
-//        if (nombreTema.equals("") || idTema.equals("") || fecha.equals("")) {
-//            desplegarMensajeCamposRequeridos();
-//        } else {
-////            if ( modoEdicion ) {
-////                Grupo grupo = Grupo.grupos.get( idGrupo );
-////                grupo.setNombre( nombre );
-////                grupo.setDescripcion( objetivo );
-////
-////                Intent intent = new Intent();
-////                intent.putExtra("resultado", 1);
-////                setResult(RESULT_OK, intent);
-////                finish();
-////            } else {
-//            int idTemaI = (int) (Double.parseDouble(idTemaS));
-//          //  ArrayList<Tema> temas = new ArrayList<>();
-//            Tema tema = new Tema(idTemaI, nombreTema, temas);
-//            if (tema == null){
-//                Log.i(LogUtils.tag, "Materia null ");
-//            }else{
-//                App.agregarMateria(unaBitacora, materia);
-//                mensajeMateriaCreada(materia);
-//                finish();
-//            }
-//
-//            Intent intent = new Intent();
-//            intent.putExtra("resultado", 10);
-//            setResult(RESULT_OK, intent);
-//            finish();
-//        }
-//    }
+    public void crearTema (View view) {
+        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
+        String nombreTema = campoNombre.getText().toString();
+        String idTemaS = campoId.getText().toString();
+        String fecha = campoFecha.getText().toString();
 
-    public void mensajeMateriaCreada(Materia materia){
+        if (nombreTema.equals("") || idTemaS.equals("") || fecha.equals("")) {
+            desplegarMensajeCamposRequeridos();
+        } else {
+//            if ( modoEdicion ) {
+//                Grupo grupo = Grupo.grupos.get( idGrupo );
+//                grupo.setNombre( nombre );
+//                grupo.setDescripcion( objetivo );
+//
+//                Intent intent = new Intent();
+//                intent.putExtra("resultado", 1);
+//                setResult(RESULT_OK, intent);
+//                finish();
+//            } else {
+            int idTemaI = (int) (Double.parseDouble(idTemaS));
+          //  ArrayList<Tema> temas = new ArrayList<>();
+            Tema tema = new Tema(idTemaI, nombreTema);
+            if (tema == null){
+                Log.i(LogUtils.tag, "Materia null ");
+            }else{
+                App.agregarMateria(unaBitacora, unaMateria);
+                mensajeTemaCreado(tema);
+                finish();
+            }
+
+            Intent intent = new Intent();
+            intent.putExtra("resultado", 10);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+    }
+
+    public void mensajeTemaCreado(Tema tema){
         Toast toast = Toast.makeText( this, "Materia creada", Toast.LENGTH_SHORT);
         toast.show();
-        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
+        Log.i(LogUtils.tag, "Materia creada: "+tema.getNombre());
     }
 
     public void desplegarMensajeCamposRequeridos() {

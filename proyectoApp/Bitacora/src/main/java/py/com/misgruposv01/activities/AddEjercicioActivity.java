@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -24,7 +26,7 @@ import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
-public class AddEjercicioActivity extends Activity {
+public class AddEjercicioActivity extends AppCompatActivity {
     private String tag = "AppConoceme";
     EditText campotiempoDedicadoIni;
     EditText campotiempoDedicadoFin;
@@ -42,7 +44,7 @@ public class AddEjercicioActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(LogUtils.tag, "ACTIVIDAD ADD MATERIA ");
+        Log.i(LogUtils.tag, "ACTIVIDAD ADD EJERCICIO ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ejercicio);
 
@@ -58,29 +60,29 @@ public class AddEjercicioActivity extends Activity {
 
     //    unTema = App.buscarTema(idTema);
 
-        campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
-        campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
-        campoexperiencia = (EditText) findViewById(R.id.crear_experiencias_ejer);
-        campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
-        campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
-
-        campotiempoDedicadoIni.setInputType(InputType.TYPE_NULL);
-        campotiempoDedicadoFin.setInputType(InputType.TYPE_NULL);
-
-
-        campotiempoDedicadoIni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarHora(campotiempoDedicadoIni);
-            }
-        });
-
-        campotiempoDedicadoFin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarHora(campotiempoDedicadoFin);
-            }
-        });
+//        campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
+//        campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
+//        campoexperiencia = (EditText) findViewById(R.id.crear_experiencias_ejer);
+//        campodudas = (EditText) findViewById(R.id.crear_dudas_ejer);
+//        campologrado = (EditText) findViewById (R.id.crear_logrado_ejer);
+//
+//        campotiempoDedicadoIni.setInputType(InputType.TYPE_NULL);
+//        campotiempoDedicadoFin.setInputType(InputType.TYPE_NULL);
+//
+//
+//        campotiempoDedicadoIni.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mostrarHora(campotiempoDedicadoIni);
+//            }
+//        });
+//
+//        campotiempoDedicadoFin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mostrarHora(campotiempoDedicadoFin);
+//            }
+//        });
 
     }
 

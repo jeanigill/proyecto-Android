@@ -25,6 +25,7 @@
         <activity android:name=".activities.NewActivity"></activity>
         <activity android:name=".activities.BitacorasListView" />
         <activity android:name=".activities.AddInvestigacionActivity" />
+        <activity android:name=".activities.AddEjercicioActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

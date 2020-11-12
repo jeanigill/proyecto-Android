@@ -26,10 +26,12 @@ public class NewActivity extends Activity {
             idMateria = extras.getInt("idMateria", -1);
             idBitacora = extras.getInt("idBitacora", -1);
             idTema = extras.getInt("idTema", -1);
-            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora CLASE NEW: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             Log.i(LogUtils.tag, "Id recibido del Tema: "+ idTema);
 
+        }else{
+            Log.i(LogUtils.tag, "El extra esta vacio ");
         }
     }
     public void lanzarVistaAcercaDe(View view){

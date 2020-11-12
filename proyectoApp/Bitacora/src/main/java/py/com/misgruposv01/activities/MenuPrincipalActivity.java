@@ -73,6 +73,9 @@ public class MenuPrincipalActivity extends Activity {
     }
     public void lanzarVistaNew (View view){
         Intent i = new Intent(this, NewActivity.class);
+        i.putExtra("idBitacora", idBitacora);
+        i.putExtra("idMateria", idMateria);
+        i.putExtra("idTema", idTema);
         startActivity(i);
     }
 }
