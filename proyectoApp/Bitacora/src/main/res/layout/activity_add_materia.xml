@@ -49,8 +49,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="212dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="217dp"
         android:text="Sugerencias y / o tipps para aprovechar
 a maximo la bitacora de aprendizaje :) " />
 
@@ -114,7 +114,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:id="@+id/imageView5"
         android:layout_width="42dp"
         android:layout_height="43dp"
-        android:onClick="crearMateria"
+        android:onClick="lanzarVistaVolver"
         android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
     <ImageView

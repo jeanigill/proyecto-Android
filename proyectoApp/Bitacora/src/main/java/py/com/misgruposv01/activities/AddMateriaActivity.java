@@ -27,7 +27,8 @@ public class AddMateriaActivity extends Activity {
     EditText campoId;
     EditText campoFechaMateria;
     int idBitacora = 0;
-    Bitacora unaBitacora= null;
+    Bitacora unaBitacora = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(LogUtils.tag, "ACTIVIDAD ADD MATERIA ");
@@ -40,7 +41,7 @@ public class AddMateriaActivity extends Activity {
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
         }
 
-         unaBitacora = App.buscarBitacora(idBitacora);
+        unaBitacora = App.buscarBitacora(idBitacora);
 
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
         campoId = (EditText) findViewById(R.id.crear_id_Materia);
@@ -56,7 +57,7 @@ public class AddMateriaActivity extends Activity {
     }
 
 
-    public void crearMateria (View view) {
+    public void crearMateria(View view) {
         Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
         String nombreMateria = campoNombreMateria.getText().toString();
         String idMateria = campoId.getText().toString();
@@ -78,9 +79,9 @@ public class AddMateriaActivity extends Activity {
             int idMateriaI = (int) (Double.parseDouble(idMateria));
             ArrayList<Materia> materias = new ArrayList<>();
             Materia materia = new Materia(idMateriaI, nombreMateria, materias);
-            if (materia == null){
+            if (materia == null) {
                 Log.i(LogUtils.tag, "Materia null ");
-            }else{
+            } else {
                 App.agregarMateria(unaBitacora, materia);
                 mensajeMateriaCreada(materia);
                 finish();
@@ -93,34 +94,51 @@ public class AddMateriaActivity extends Activity {
         }
     }
 
-    public void mensajeMateriaCreada(Materia materia){
-        Toast toast = Toast.makeText( this, "Materia creada", Toast.LENGTH_SHORT);
+    ///// TOAST //////
+    public void mensajeMateriaCreada(Materia materia) {
+        Toast toast = Toast.makeText(this, "Materia creada", Toast.LENGTH_SHORT);
         toast.show();
-        Log.i(LogUtils.tag, "Materia creada: "+materia.getNombre());
+        Log.i(LogUtils.tag, "Materia creada: " + materia.getNombre());
     }
 
     public void desplegarMensajeCamposRequeridos() {
-        Toast toast = Toast.makeText( this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
         toast.show();
     }
 
+    public void desplegarMensajeCancelado() {
+        Toast toast = Toast.makeText( this, "La carga fue cancelada", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void lanzarVistaVolver (View view){
+        Intent i = new Intent(this, MateriasListView.class);
+        desplegarMensajeCancelado();
+        startActivity(i);
+    }
+
+
+        //// MOSTRAR FECHA ////
+
     private void mostrarFecha(final EditText campoFechaMateria) {
-        final Calendar calendar=Calendar.getInstance();
-        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+        final Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR,year);
-                calendar.set(Calendar.MONTH,month);
-                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd");
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
                 campoFechaMateria.setText(simpleDateFormat.format(calendar.getTime()));
 
             }
         };
 
-        new DatePickerDialog(AddMateriaActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(AddMateriaActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
-
 }
+
+
+
 
 

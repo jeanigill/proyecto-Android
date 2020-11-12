@@ -16,11 +16,13 @@
 		android:layout_marginRight="10dp"
 		android:src="@mipmap/ic_icono_materia_foreground" />
 
-	<TextView android:id="@+id/nombre_elemento"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textSize="20sp"
-		android:layout_toRightOf="@id/logo_bitacora" />
+	<TextView
+		android:id="@+id/nombre_elemento"
+		android:layout_width="235dp"
+		android:layout_height="35dp"
+		android:layout_alignRight="@id/logo_bitacora"
+		android:layout_marginRight="-245dp"
+		android:textSize="20sp" />
 
 </RelativeLayout>
 
