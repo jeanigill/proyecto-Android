@@ -13,11 +13,13 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
 import py.com.misgruposv01.datos.Bitacora;
 import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
 public class AddTemaActivity extends Activity {
@@ -29,41 +31,45 @@ public class AddTemaActivity extends Activity {
     int idMateria = 0;
     Bitacora unaBitacora= null;
     Materia unaMateria= null;
-    //@Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        Log.i(LogUtils.tag, "ACTIVIDAD ADD MATERIA ");
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_materia);
-//
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//            idBitacora = extras.getInt("idBitacora", -1);
-//            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
-//        }
-//
-//         unaBitacora = App.buscarBitacora(idBitacora);
-//
-//        campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
-//        campoId = (EditText) findViewById(R.id.crear_id_Materia);
-//        campoFechaMateria = (EditText) findViewById(R.id.editText);
-//
-//        campoFechaMateria.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mostrarFecha(campoFechaMateria);
-//            }
-//        });
-//
-//    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LogUtils.tag, "ACTIVIDAD ADD TEMA ");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_tema);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            idBitacora = extras.getInt("idBitacora", -1);
+            idMateria = extras.getInt("idMateria", -1);
+            Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
+        }
+
+         unaBitacora = App.buscarBitacora(idBitacora);
+        unaMateria = App.buscarMateria(unaBitacora, idMateria);
+
+        campoNombre = (EditText) findViewById(R.id.crear_nombre_tema);
+        campoId = (EditText) findViewById(R.id.crear_id_tema);
+        campoFecha = (EditText) findViewById(R.id.editText);
+
+        campoFecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarFecha(campoFecha);
+            }
+        });
+
+    }
 
 
-//    public void crearMateria (View view) {
+//    public void crearTema (View view) {
 //        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
-//        String nombreMateria = campoNombreMateria.getText().toString();
-//        String idMateria = campoId.getText().toString();
-//
-//
-//        if (nombreMateria.equals("") || idMateria.equals("")) {
+//        String nombreTema = campoNombre.getText().toString();
+//        String idTexmaS = campoId.getText().toString();
+//        String fecha = campoFecha.getText().toString();
+//        //Date fechaNac = (Date.valueOf(fechaS);
+//        //fechaS.split("-");
+//        if (nombreTema.equals("") || idTema.equals("") || fecha.equals("")) {
 //            desplegarMensajeCamposRequeridos();
 //        } else {
 ////            if ( modoEdicion ) {
@@ -76,10 +82,10 @@ public class AddTemaActivity extends Activity {
 ////                setResult(RESULT_OK, intent);
 ////                finish();
 ////            } else {
-//            int idMateriaI = (int) (Double.parseDouble(idMateria));
-//            ArrayList<Materia> materias = new ArrayList<>();
-//            Materia materia = new Materia(idMateriaI, nombreMateria, materias);
-//            if (materia == null){
+//            int idTemaI = (int) (Double.parseDouble(idTemaS));
+//          //  ArrayList<Tema> temas = new ArrayList<>();
+//            Tema tema = new Tema(idTemaI, nombreTema, temas);
+//            if (tema == null){
 //                Log.i(LogUtils.tag, "Materia null ");
 //            }else{
 //                App.agregarMateria(unaBitacora, materia);

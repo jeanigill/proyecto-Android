@@ -38,6 +38,7 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     int idMateria = 0;
     int idBitacora = 0;
     int idTema = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

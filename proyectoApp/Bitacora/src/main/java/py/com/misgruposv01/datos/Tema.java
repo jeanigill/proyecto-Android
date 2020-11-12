@@ -10,7 +10,7 @@ import py.com.misgruposv01.utils.LogUtils;
 public class Tema {
     private int id;
     private String nombre;
-    private Date fecha;
+    private String fecha;
     private ArrayList<Item> items;
     private ArrayList<Ejercicio> ejercicios;
     private ArrayList<Investigacion> investigaciones;
@@ -27,7 +27,7 @@ public class Tema {
     public Tema (int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.fecha = new Date();
+       // this.fecha = new Date();
         items = new ArrayList<>();
         investigaciones = new ArrayList<>();
         ejercicios = new ArrayList<>();
@@ -36,13 +36,17 @@ public class Tema {
     public Tema (int id, String nombre, ArrayList items, ArrayList investigaciones, ArrayList ejercicios ) {
         this.id = id;
         this.nombre = nombre;
-        this.fecha = new Date();
+        //this.fecha = new Date();
         this.items = items;
         this.investigaciones = investigaciones;
         this.ejercicios = ejercicios;
-
     }
 
+    public Tema (int id, String nombre, String fecha ) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fecha = fecha;
+    }
 
     public void agregarInvestigacion (Investigacion investigacion) {
         if (getInvestigaciones()==null){
@@ -71,11 +75,11 @@ public class Tema {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

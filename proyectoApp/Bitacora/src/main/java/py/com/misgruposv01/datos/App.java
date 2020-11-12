@@ -219,6 +219,19 @@ public class App {
         }
     }
 
+    public static void agregarTema (Materia materia, Tema tema) {
+        if (materia.getTemas()==null){
+            Log.i(LogUtils.tag, "No tiene temas ");
+            ArrayList<Tema> temas = new ArrayList<>();
+            temas.add(tema);
+            materia.setTemas(temas);
+        }else{
+            Log.i(LogUtils.tag, "Tamaño de ArrayListTemas"+materia.getTemas().size());
+            materia.getTemas().add(tema);
+            Log.i(LogUtils.tag, "Tema nuevo: "+tema.getNombre());
+        }
+    }
+
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;
     }
