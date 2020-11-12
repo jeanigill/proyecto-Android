@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="114dp"
             android:src="@drawable/ic_dashboard_black_24dp"
-            android:onClick="lanzarVistaAddEjercicio"
+            android:onClick="lanzarVistaDeAddEjercicio"
             />
 
 

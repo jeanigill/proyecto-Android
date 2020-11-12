@@ -84,7 +84,7 @@ public class AddEjercicioActivity extends Activity {
 
     }
 
-    public void crearEjercicio () {
+    public void crearEjercicio (View view) {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
         String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
         int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
@@ -172,7 +172,7 @@ public class AddEjercicioActivity extends Activity {
         switch(item.getItemId()){
             case R.id.item_guardar: {
                 Log.d(LogUtils.tag, "Item seleccionado: Guardar");
-                crearEjercicio();
+        //        crearEjercicio();
                 break;
             }case R.id.item_limpiar:{
                 Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
