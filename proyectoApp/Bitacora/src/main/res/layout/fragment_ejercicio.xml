@@ -14,37 +14,37 @@
         tools:layout_editor_absoluteX="160dp"
         tools:layout_editor_absoluteY="133dp">
 
+<!--        <TextView-->
+<!--            android:id="@+id/text_inicio"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="61dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:background="@color/verde_200"-->
+<!--            android:gravity="center"-->
+<!--            android:text="EJERCICIO"-->
+<!--            android:textSize="24dp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
         <TextView
-            android:id="@+id/text_inicio"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/verde_200"
-            android:gravity="center"
-            android:text="EJERCICIO"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:id="@+id/id_nombre_tiempo_dedicado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="Tiempo dedicado"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/nombre_tiempo_dedic_valor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text="Tiempo dedicado"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/id_nombre_concepto_valor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
             android:textSize="20sp" />
 
         <TextView
@@ -52,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_below="@+id/id_nombre_concepto_valor"
             android:text="Experiencia:"
             android:textSize="20sp" />
 
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_below="@+id/nombre_experiencia"
             android:layout_marginLeft="10dp"
             android:textSize="20sp" />
 
@@ -69,10 +71,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:text="Dudas:"
+            android:layout_below="@+id/id_nombre_experiencia_valor"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/id_nombre_dudas_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/nombre_dudas"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/id_nombre_logrado_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -83,16 +95,9 @@
             android:id="@+id/nombre_logrado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/id_nombre_dudas_valor"
             android:layout_gravity="bottom"
             android:text="Logrado:"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/id_nombre_logrado_valor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
             android:textSize="20sp" />
     </LinearLayout>
 
