@@ -41,20 +41,7 @@ public int idBitacora;
         }else{
             setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
         }
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
 
     @Override
     protected void onListItemClick (ListView l, View v, int position, long id) {

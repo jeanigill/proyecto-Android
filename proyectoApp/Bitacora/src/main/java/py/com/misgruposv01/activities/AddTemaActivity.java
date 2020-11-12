@@ -89,8 +89,9 @@ public class AddTemaActivity extends Activity {
             if (tema == null){
                 Log.i(LogUtils.tag, "Materia null ");
             }else{
-                App.agregarMateria(unaBitacora, unaMateria);
+                App.agregarTema(unaMateria, tema);
                 mensajeTemaCreado(tema);
+                Log.i(LogUtils.tag, "Nombre del tema nuevo: "+tema.getNombre());
                 finish();
             }
 
@@ -102,9 +103,9 @@ public class AddTemaActivity extends Activity {
     }
 
     public void mensajeTemaCreado(Tema tema){
-        Toast toast = Toast.makeText( this, "Materia creada", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText( this, "Tema creado", Toast.LENGTH_SHORT);
         toast.show();
-        Log.i(LogUtils.tag, "Materia creada: "+tema.getNombre());
+        Log.i(LogUtils.tag, "Materia creado: "+tema.getNombre());
     }
 
     public void desplegarMensajeCamposRequeridos() {

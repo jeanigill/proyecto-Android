@@ -105,7 +105,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:layout_height="43dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:accessibilityPaneTitle="Crear Materia"
+        android:accessibilityPaneTitle="Crear Tema"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary" />
@@ -136,7 +136,7 @@ a maximo la bitacora de aprendizaje :) " />
         android:layout_alignParentTop="true"
         android:layout_marginStart="66dp"
         android:layout_marginTop="2dp"
-        android:text="Crear Materia"
+        android:text="Crear Tema"
         android:textSize="26dp" />
 
 
