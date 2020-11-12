@@ -37,10 +37,13 @@
     <string name="new_investigacion">INVESTIGACION</string>
     <string name="new_ejercicio">EJERCICIO</string>
 
-    <!-- MENU VER ITEM  -->
+    <!-- BOTONES DE LOS MENÚS  -->
     <string name="menu_siguiente">Siguiente</string>
     <string name="menu_editar">Editar</string>
     <string name="menu_eliminar">Eliminar</string>
+    <string name="menu_guardar">GUARDAR</string>
+    <string name="menu_compartir">Compartir</string>
+    <string name="menu_limpiar">Limpiar campos</string>
 
 
 </resources>
