@@ -34,6 +34,8 @@ public class AddEjercicioActivity extends Activity {
     EditText campodudas;
     EditText campologrado;
     int idTema = 0;
+    int idBitacora = 0;
+    int idMateria = 0;
     Tema unTema= null;
     Ejercicio unEjercicio = null;
 
@@ -46,8 +48,12 @@ public class AddEjercicioActivity extends Activity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            idBitacora = extras.getInt("idBitacora", -1);
+            idMateria = extras.getInt("idMateria", -1);
             idTema = extras.getInt("idTema", -1);
-            Log.i(LogUtils.tag, "Id recibido del tema: " + idTema);
+            Log.i(LogUtils.tag, "Id recibido de la Bitacora: " + idBitacora);
+            Log.i(LogUtils.tag, "Id recibido de la Materia: " + idMateria);
+            Log.i(LogUtils.tag, "Id recibido del Tema: " + idTema);
         }
 
     //    unTema = App.buscarTema(idTema);
