@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="104dp"
             android:text="Ver Ejercicio"
+            android:onClick="lanzarVistaVerEjercicio"
             android:textSize="25dp"/>
 
         <Button

@@ -32,7 +32,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/nombre_Concepto"
+            android:id="@+id/nombre_tiempo_dedic_valor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -48,7 +48,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/nombre_Descrip"
+            android:id="@+id/nombre_experiencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -56,7 +56,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/id_nombre_descrip_valor"
+            android:id="@+id/id_nombre_experiencia_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
