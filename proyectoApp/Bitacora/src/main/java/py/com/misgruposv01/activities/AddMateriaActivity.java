@@ -41,7 +41,7 @@ public class AddMateriaActivity extends Activity {
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
         }
 
-        unaBitacora = App.buscarBitacora(idBitacora);
+
 
         campoNombreMateria = (EditText) findViewById(R.id.crear_nombre_Materia);
         campoId = (EditText) findViewById(R.id.crear_id_Materia);
@@ -57,6 +57,34 @@ public class AddMateriaActivity extends Activity {
     }
 
 
+//    public void crearMateria(View view) {
+//        Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
+//        String nombreMateria = campoNombreMateria.getText().toString();
+//        String idMateria = campoId.getText().toString();
+//
+//
+//        if (nombreMateria.equals("") || idMateria.equals("")) {
+//            desplegarMensajeCamposRequeridos();
+//        } else {
+//            unaBitacora = App.buscarBitacora(idBitacora);
+//            int idMateriaI = (int) (Double.parseDouble(idMateria));
+//           // ArrayList<Materia> materias = new ArrayList<>();
+//            Materia materia = new Materia(idMateriaI, nombreMateria);
+//            if (materia == null) {
+//                Log.i(LogUtils.tag, "Materia null ");
+//            } else {
+//                App.agregarMateria(unaBitacora, materia);
+//                mensajeMateriaCreada(materia);
+//                finish();
+//            }
+//
+//            Intent intent = new Intent();
+//            intent.putExtra("resultado", 10);
+//            setResult(RESULT_OK, intent);
+//            finish();
+//        }
+//    }
+
     public void crearMateria(View view) {
         Log.i(LogUtils.tag, "METODO CREAR MATERIA ");
         String nombreMateria = campoNombreMateria.getText().toString();
@@ -66,16 +94,6 @@ public class AddMateriaActivity extends Activity {
         if (nombreMateria.equals("") || idMateria.equals("")) {
             desplegarMensajeCamposRequeridos();
         } else {
-//            if ( modoEdicion ) {
-//                Grupo grupo = Grupo.grupos.get( idGrupo );
-//                grupo.setNombre( nombre );
-//                grupo.setDescripcion( objetivo );
-//
-//                Intent intent = new Intent();
-//                intent.putExtra("resultado", 1);
-//                setResult(RESULT_OK, intent);
-//                finish();
-//            } else {
             int idMateriaI = (int) (Double.parseDouble(idMateria));
             ArrayList<Materia> materias = new ArrayList<>();
             Materia materia = new Materia(idMateriaI, nombreMateria, materias);

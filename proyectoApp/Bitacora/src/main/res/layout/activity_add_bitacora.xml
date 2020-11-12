@@ -8,6 +8,7 @@
     tools:context=".activities.AddBitacoraActivity">
 
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -73,9 +74,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="126dp"
         android:layout_marginTop="73dp"
-        android:onClick="crearBitacora"
+        android:onClick="lanzarVistaAddMateriaB"
         android:shadowColor="@color/verde_200"
-        android:text="@string/new_bitacora" />
+        android:text="@string/add_materia" />
 
     <TextView
         android:id="@+id/textView"

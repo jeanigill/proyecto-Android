@@ -21,7 +21,7 @@ public class AddBitacoraActivity extends AppCompatActivity {
     private String tag = "AppConoceme";
     EditText campoId;
      EditText campoAnho;
-
+    int id = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class AddBitacoraActivity extends AppCompatActivity {
 
     public void crearBitacora (View view) {
         String idString = campoId.getText().toString();
-        int id = (int) (Double.parseDouble(idString));
+        id = (int) (Double.parseDouble(idString));
         String anho = campoAnho.getText().toString();
         if (idString.equals("") || anho.equals("")) {
             desplegarMensajeCamposRequeridos();
@@ -83,7 +83,7 @@ public class AddBitacoraActivity extends AppCompatActivity {
             }
     public void crearBitacora () {
         String idString = campoId.getText().toString();
-        int id = (int) (Double.parseDouble(idString));
+        id = (int) (Double.parseDouble(idString));
         String anho = campoAnho.getText().toString();
         if (idString.equals("") || anho.equals("")) {
             desplegarMensajeCamposRequeridos();
@@ -131,6 +131,12 @@ public class AddBitacoraActivity extends AppCompatActivity {
     public void lanzarVistaVolver (View view){
         Intent i = new Intent(this, BitacorasListView.class);
         desplegarMensajeCancelado();
+        startActivity(i);
+    }
+    public void lanzarVistaAddMateriaB (View view) {
+        crearBitacora();
+        Intent i = new Intent(this, AddMateriaActivity.class);
+        i.putExtra("idBitacora", Integer.parseInt(""+id));
         startActivity(i);
     }
 }

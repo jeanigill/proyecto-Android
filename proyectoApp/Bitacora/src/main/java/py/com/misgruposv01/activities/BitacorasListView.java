@@ -39,6 +39,7 @@ public class BitacorasListView extends ListActivity {
         i.putExtra("idBitacora", Integer.parseInt(""+id));
         startActivity(i);
     }
+
     public void lanzarVistaAddBitacora(View view){
         Intent i = new Intent(this, AddBitacoraActivity.class);
         //i.putExtra("id", (long)0);
