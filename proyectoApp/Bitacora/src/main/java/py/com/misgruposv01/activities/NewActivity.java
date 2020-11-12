@@ -47,6 +47,14 @@ public class NewActivity extends Activity {
 
     }
 
+    public void lanzarVistaAddEjercicio (View view){
+        Intent i = new Intent ( this, AddEjercicioActivity.class);
+        i.putExtra("idBitacora", idBitacora);
+        i.putExtra("idMateria", idMateria);
+        i.putExtra("idTema", idTema);
+        startActivity(i);
+    }
+
     public void lanzarVistaVerItem (View view){
             final EditText entrada = new EditText(this);
             entrada.setText("0");
