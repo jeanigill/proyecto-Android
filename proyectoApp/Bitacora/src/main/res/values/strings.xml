@@ -37,5 +37,10 @@
     <string name="new_investigacion">INVESTIGACION</string>
     <string name="new_ejercicio">EJERCICIO</string>
 
+    <!-- MENU VER ITEM  -->
+    <string name="menu_siguiente">Siguiente</string>
+    <string name="menu_editar">Editar</string>
+    <string name="menu_eliminar">Eliminar</string>
+
 
 </resources>

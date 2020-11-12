@@ -19,6 +19,7 @@ import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.datos.Item;
 import py.com.misgruposv01.utils.LogUtils;
+import py.com.misgruposv01.utils.NotificationsUtils;
 
 // import py.com.misgruposv01.utils.NotificationsUtils;
 // import py.com.misgruposv01.utils.RequestCode;
@@ -78,32 +79,44 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
         Descripcion.setText(unItem.getDescripcion());
     }
 
-  //  @Override
-  //  public boolean onCreateOptionsMenu(Menu menu) {
-  //      getMenuInflater().inflate( R.menu.ver_grupo_menu , menu );
-  //      return true;
-  //  }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate( R.menu.ver_item_menu , menu );
+        return true;
+    }
 
-  //  @Override
-  //  public boolean onOptionsItemSelected(MenuItem item) {
-  //      switch( item.getItemId() ) {
-  //          case R.id.editar_grupo:{
-  //              lanzarActividadEdicionGrupo();
-  //              break;
-  //          }
-  //          case R.id.eliminar_grupo:{
-  //              Grupo.grupos.remove( idGrupo );
-  //              desplegarMensajeEliminacionGrupo();
-    //             finish();
-    //          break;
-    //      }case R.id.accion_sigte_tar:{
-  //          Log.d(LogUtils.tag, "Item seleccionado: Siguiente");
-    //            opcionSiguiente();
-    //      }
-//
-    //      }
-    //  return true;
-    // }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch( item.getItemId() ) {
+            case R.id.editar_grupo:{
+                //lanzarActividadEdicionGrupo();
+                break;
+            }
+            case R.id.eliminar_grupo:{
+                unTema.getItems().remove(unItem);
+                desplegarMensajeEliminacionItem();
+                 finish();
+              break;
+          }case R.id.accion_sigte_tar:{
+            Log.d(LogUtils.tag, "Item seleccionado: Siguiente");
+                opcionSiguiente();
+          }
+
+          }
+      return true;
+     }
+
+    public void opcionSiguiente(){
+        idItem++;
+        if(idItem < unTema.getItems().size()){
+            unItem = unTema.getItems().get(idItem);
+            actualizarVista();
+        }else{
+            Context contexto = getApplicationContext();
+            NotificationsUtils.desplegarMensaje("Ya no existen items en la lista", contexto);
+        }
+
+    }
 
     //  private void lanzarActividadEdicionGrupo() {
     //    Intent i = new Intent( this, CrearGrupoActivity.class );
@@ -112,7 +125,7 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     //    }
 
 
-    public void desplegarMensajeEliminacionGrupo() {
+    public void desplegarMensajeEliminacionItem() {
         Toast toast = Toast.makeText( this, "El grupo fue eliminado", Toast.LENGTH_SHORT);
         toast.show();
     }
