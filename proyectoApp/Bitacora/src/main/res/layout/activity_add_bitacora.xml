@@ -102,5 +102,15 @@
         android:background="@color/colorPrimary"
      />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-3dp"
+        android:background="@color/verde_200" />
+
 
 </RelativeLayout>
