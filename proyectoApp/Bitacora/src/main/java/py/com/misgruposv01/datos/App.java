@@ -238,12 +238,27 @@ public class App {
             ejercicios.add(unEjercicio);
             tema.setEjercicios(ejercicios);
         }else{
-            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios antes"+tema.getEjercicios().size());
+            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios antes: "+tema.getEjercicios().size());
             tema.getEjercicios().add(unEjercicio);
             Log.i(LogUtils.tag, "Experiencia del ejercicio nuevo: "+unEjercicio.getExperiencia());
-            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios despues"+tema.getEjercicios().size());
+            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios despues: "+tema.getEjercicios().size());
         }
     }
+
+    public static void agregarInvestigacion (Tema tema, Investigacion investigacion) {
+        if (tema.getInvestigaciones()==null){
+            Log.i(LogUtils.tag, "No tiene investigaciones ");
+            ArrayList<Investigacion> investigaciones = new ArrayList<>();
+            investigaciones.add(investigacion);
+            tema.setInvestigaciones(investigaciones);
+        }else{
+                Log.i(LogUtils.tag, "Tamaño de ArrayList Investigaciones antes: "+tema.getInvestigaciones().size());
+            tema.getInvestigaciones().add(investigacion);
+            Log.i(LogUtils.tag, "Tema de la nueva investigacion: "+investigacion.getTema());
+            Log.i(LogUtils.tag, "Tamaño de ArrayList Investigaciones despues: "+tema.getInvestigaciones().size());
+        }
+    }
+
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;
     }

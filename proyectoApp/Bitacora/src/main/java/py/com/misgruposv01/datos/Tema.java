@@ -48,17 +48,17 @@ public class Tema {
         this.fecha = fecha;
     }
 
-    public void agregarInvestigacion (Investigacion investigacion) {
-        if (getInvestigaciones()==null){
-            Log.i(LogUtils.tag, "No tiene investigaciones ");
-            investigaciones.add(investigacion);
-            setInvestigaciones(investigaciones);
-        }else{
-            Log.i(LogUtils.tag, "Tamaño de ArrayListInvestigaciones"+getInvestigaciones().size());
-            getInvestigaciones().add(investigacion);
-            Log.i(LogUtils.tag, "Materia nueva: "+investigacion.getTema());
-        }
-    }
+//    public void agregarInvestigacion (Investigacion investigacion) {
+//        if (getInvestigaciones()==null){
+//            Log.i(LogUtils.tag, "No tiene investigaciones ");
+//            investigaciones.add(investigacion);
+//            setInvestigaciones(investigaciones);
+//        }else{
+//            Log.i(LogUtils.tag, "Tamaño de ArrayListInvestigaciones"+getInvestigaciones().size());
+//            getInvestigaciones().add(investigacion);
+//            Log.i(LogUtils.tag, "Materia nueva: "+investigacion.getTema());
+//        }
+//    }
     public int getId() {
         return id;
     }

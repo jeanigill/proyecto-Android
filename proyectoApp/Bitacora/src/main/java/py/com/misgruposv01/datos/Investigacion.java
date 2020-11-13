@@ -25,7 +25,12 @@ public class Investigacion {
         this.comprension = comprension;
         this.dudas = dudas;
     }
-
+    public Investigacion(String tema, String comentarios, int comprension, String dudas) {
+        this.tema = tema;
+        this.comentarios = comentarios;
+        this.comprension = comprension;
+        this.dudas = dudas;
+    }
 
 
     public int getTiempoDedicado() {

@@ -58,7 +58,6 @@ public class AddEjercicioActivity extends AppCompatActivity {
             Log.i(LogUtils.tag, "Id recibido del Tema: " + idTema);
         }
 
-      //  unTema = App.buscarTema();
 
         campotiempoDedicadoIni = (EditText) findViewById(R.id.crear_tiempodediIni_ejerci);
         campotiempoDedicadoFin = (EditText) findViewById(R.id.crear_tiempodediFin_ejerci);
@@ -108,36 +107,11 @@ public class AddEjercicioActivity extends AppCompatActivity {
             App.agregarEjercicio(tema, unEjercicio);
             mensajeAgregado ();
             Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
+            finish();
         }
 
-
-
-
-        finish();
     }
 
-    //
-//    public void crearEjercicio (View view) {
-//        Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
-//        String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
-//        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
-//        String tiempoDedicadoFin = campotiempoDedicadoFin.getText().toString();
-//        int tiempoDedicadoII = (int) (Double.parseDouble(tiempoDedicadoFin));
-//        String experiencia = campoexperiencia.getText().toString();
-//        String duda = campodudas.getText().toString();
-//        String logrado = campologrado.getText().toString();
-//        int logradoI = (int) (Double.parseDouble(logrado));
-//
-//
-//        // MateriasListView metodoBuscar = new MateriasListView();
-//        // Ejercicio unEjercicio = new Ejercicio(tiempoDedicadoI, experiencia , duda , logradoI);
-//        // unEjercicio.agregarEjercicio(ejercicio);
-//
-//        Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
-//        toast.show();
-//        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicado());
-//        finish();
-//    }
 
 
     //Cargar el menu donde se tiene que llevar de vuelta
@@ -168,10 +142,10 @@ public class AddEjercicioActivity extends AppCompatActivity {
         new TimePickerDialog(AddEjercicioActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
     }
 
-public void mensajeAgregado (){
+    public void mensajeAgregado (){
     Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
     toast.show();
-}
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
