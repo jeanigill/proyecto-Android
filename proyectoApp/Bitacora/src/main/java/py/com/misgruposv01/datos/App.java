@@ -231,6 +231,19 @@ public class App {
         }
     }
 
+    public static void agregarEjercicio (Tema tema, Ejercicio unEjercicio) {
+        if (tema.getEjercicios()==null){
+            Log.i(LogUtils.tag, "No tiene ejercicios ");
+            ArrayList<Ejercicio> ejercicios = new ArrayList<>();
+            ejercicios.add(unEjercicio);
+            tema.setEjercicios(ejercicios);
+        }else{
+            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios antes"+tema.getEjercicios().size());
+            tema.getEjercicios().add(unEjercicio);
+            Log.i(LogUtils.tag, "Experiencia del ejercicio nuevo: "+unEjercicio.getExperiencia());
+            Log.i(LogUtils.tag, "Tamaño de ArrayListEjercicios despues"+tema.getEjercicios().size());
+        }
+    }
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;
     }

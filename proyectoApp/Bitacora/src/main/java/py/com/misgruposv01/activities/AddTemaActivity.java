@@ -104,16 +104,6 @@ public class AddTemaActivity extends AppCompatActivity {
         if (nombreTema.equals("") || idTemaS.equals("") || fecha.equals("")) {
             desplegarMensajeCamposRequeridos();
         } else {
-//            if ( modoEdicion ) {
-//                Grupo grupo = Grupo.grupos.get( idGrupo );
-//                grupo.setNombre( nombre );
-//                grupo.setDescripcion( objetivo );
-//
-//                Intent intent = new Intent();
-//                intent.putExtra("resultado", 1);
-//                setResult(RESULT_OK, intent);
-//                finish();
-//            } else {
             int idTemaI = (int) (Double.parseDouble(idTemaS));
           //  ArrayList<Tema> temas = new ArrayList<>();
             Tema tema = new Tema(idTemaI, nombreTema);

@@ -26,10 +26,7 @@ public class Investigacion {
         this.dudas = dudas;
     }
 
-//    public static void agregarGrupo( Grupo unGrupo ) {
-//        grupos.add( unGrupo );
-//    }
-//
+
 
     public int getTiempoDedicado() {
         return tiempoDedicado;

@@ -86,25 +86,33 @@ public class AddEjercicioActivity extends AppCompatActivity {
 
     }
 
-    public void crearEjercicio (View view) {
+    public void crearEjercicio () {
         Log.i(LogUtils.tag, "METODO CREAR EJERCICIO");
         String tiempoDedicadoIni = campotiempoDedicadoIni.getText().toString();
-        int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
         String tiempoDedicadoFin = campotiempoDedicadoFin.getText().toString();
-        int tiempoDedicadoII = (int) (Double.parseDouble(tiempoDedicadoFin));
         String experiencia = campoexperiencia.getText().toString();
         String duda = campodudas.getText().toString();
         String logrado = campologrado.getText().toString();
-        int logradoI = (int) (Double.parseDouble(logrado));
+        if (tiempoDedicadoIni.equals("")||tiempoDedicadoFin.equals("")||
+                experiencia.equals("")||duda.equals("")|| logrado.equals("")){
+            desplegarMensajeCamposRequeridos();
+        }else{
+//            int tiempoDedicadoI = (int) (Double.parseDouble(tiempoDedicadoIni));
+//            int tiempoDedicadoFI = (int) (Double.parseDouble(tiempoDedicadoFin));
+            int logradoI = (int) (Double.parseDouble(logrado));
+
+            Bitacora bitacora = App.buscarBitacora(idBitacora);
+            Materia materia = App.buscarMateria(bitacora, idMateria);
+            Tema tema = App.buscarTema(materia, idTema);
+            Ejercicio unEjercicio = new Ejercicio( experiencia , duda , logradoI);
+            App.agregarEjercicio(tema, unEjercicio);
+            mensajeAgregado ();
+            Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
+        }
 
 
-        // MateriasListView metodoBuscar = new MateriasListView();
-        // Ejercicio unEjercicio = new Ejercicio(tiempoDedicadoI, experiencia , duda , logradoI);
-        // unEjercicio.agregarEjercicio(ejercicio);
 
-        Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
-        toast.show();
-        Log.i(LogUtils.tag, "Ejercicio creado: "+ unEjercicio.getTiempoDedicadoIni());
+
         finish();
     }
 
@@ -160,7 +168,10 @@ public class AddEjercicioActivity extends AppCompatActivity {
         new TimePickerDialog(AddEjercicioActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
     }
 
-
+public void mensajeAgregado (){
+    Toast toast = Toast.makeText( this, "Ejercicio agregado", Toast.LENGTH_SHORT);
+    toast.show();
+}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -174,7 +185,7 @@ public class AddEjercicioActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.item_guardar: {
                 Log.d(LogUtils.tag, "Item seleccionado: Guardar");
-        //        crearEjercicio();
+                crearEjercicio();
                 break;
             }case R.id.item_limpiar:{
                 Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
@@ -189,6 +200,10 @@ public class AddEjercicioActivity extends AppCompatActivity {
         campotiempoDedicadoFin.setText("");
         campodudas.setText("");
         campoexperiencia.setText("");
+    }
+    public void desplegarMensajeCamposRequeridos() {
+        Toast toast = Toast.makeText(this, "Todos los campos son requeridos", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
 

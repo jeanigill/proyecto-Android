@@ -27,6 +27,12 @@ public class Ejercicio {
         this.logrado = logrado;
     }
 
+    public Ejercicio(String experiencia, String dudas, int logrado) {
+        this.experiencia = experiencia;
+        this.dudas = dudas;
+        this.logrado = logrado;
+    }
+
     public int getTiempoDedicadoIni() {
         return tiempoDedicadoIni;
     }
