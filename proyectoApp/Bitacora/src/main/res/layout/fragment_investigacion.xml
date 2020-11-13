@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="61dp"
             android:layout_marginBottom="20dp"
-            android:background="@color/verde_200"
+
             android:gravity="center"
             android:text="INVESTIGACION"
             android:textSize="24dp"
@@ -34,10 +34,10 @@
         <TextView
             android:id="@+id/tiempo_dedicado"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:layout_gravity="bottom"
             android:text="Tiempo dedicado"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tiempo_dedicado_valor"
@@ -50,10 +50,10 @@
         <TextView
             android:id="@+id/tema_investigado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:layout_gravity="bottom"
             android:text="Tema:"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tema_investigado_valor"
@@ -66,10 +66,10 @@
         <TextView
             android:id="@+id/nombre_comentarios"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:layout_gravity="bottom"
             android:text="Comentarios:"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/id_nombre_comentarios_valor"
@@ -82,10 +82,10 @@
         <TextView
             android:id="@+id/nombre_comprension"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:layout_gravity="bottom"
             android:text="Comprension:"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/id_nombre_comprension_valor"
@@ -98,10 +98,10 @@
         <TextView
             android:id="@+id/nombre_dudas_inves"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:layout_gravity="bottom"
             android:text="Dudas:"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/id_nombre_dudas_inves_valor"

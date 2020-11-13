@@ -8,18 +8,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.activities.AcercaDeActivity;
 import py.com.misgruposv01.activities.AddMateriaActivity;
 import py.com.misgruposv01.activities.Materia1Activity;
+import py.com.misgruposv01.datos.App;
+import py.com.misgruposv01.datos.Bitacora;
+import py.com.misgruposv01.datos.Materia;
+import py.com.misgruposv01.datos.Tema;
 import py.com.misgruposv01.utils.LogUtils;
 
 public class MenuPrincipalActivity extends Activity {
     int idMateria = 0;
     int idBitacora = 0;
     int idTema = 0;
-
+    TextView titulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +38,17 @@ public class MenuPrincipalActivity extends Activity {
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             Log.i(LogUtils.tag, "Id recibido del Tema: "+ idTema);
-
+            titulo();
         }
     }
+    public void titulo (){
+        Bitacora bitacora = App.buscarBitacora(idBitacora);
+        Materia materia = App.buscarMateria(bitacora, idMateria);
+        Tema tema = App.buscarTema(materia, idTema);
+        titulo = (TextView) findViewById(R.id.text_inicio);
+        titulo.setText( tema.getNombre());
 
+    }
     public void lanzarVistaAcercaDe(View view){
         Intent i = new Intent(this, AcercaDeActivity.class);
         //i.putExtra("id", (long)0);

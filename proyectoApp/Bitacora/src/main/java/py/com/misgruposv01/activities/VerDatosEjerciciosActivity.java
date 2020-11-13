@@ -83,7 +83,7 @@ public class VerDatosEjerciciosActivity extends AppCompatActivity {
         String tiempoS = String.valueOf(unEjercicio.getTiempoDedicadoIni());
         tiempoD.setText(tiempoS+" minutos");
 
-        logrado = (TextView) findViewById(R.id.id_nombre_logrado_valor);
+        logrado = (TextView) findViewById(R.id.nombre_logrado_valor);
         String logradoS = String.valueOf(unEjercicio.getLogrado());
         logrado.setText(logradoS+" %");
         Log.i(LogUtils.tag, "Logrado del ejercicio: "+unEjercicio.getLogrado());

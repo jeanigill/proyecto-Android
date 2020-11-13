@@ -32,9 +32,9 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     private Materia unaMateria = null;
     private Tema unTema = null;
     private Item unItem = null;
-    private TextView Concepto;
-    private TextView Descripcion;
-    private TextView Dudas;
+    private TextView campoConcepto;
+    private TextView campoDescripcion;
+    private TextView campoDudas;
     int idMateria = 0;
     int idBitacora = 0;
     int idTema = 0;
@@ -67,17 +67,22 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
         unTema = App.buscarTema(unaMateria, idTema);
         unItem = unTema.getItems().get(idItem);
 
+
         if ( idItem < 0 || idItem > (unTema.getItems().size()-1) ) {
             desplegarMensajeNoExisteItem();
             finish();
             return;
         }
 
-        Concepto = (TextView) findViewById(R.id.id_nombre_concepto_valor);
-        Concepto.setText( unItem.getConcepto());
+        campoConcepto = (TextView) findViewById(R.id.id_nombre_concepto_valor);
+        campoConcepto.setText( unItem.getConcepto());
 
-        Descripcion = (TextView) findViewById(R.id.id_nombre_descrip_valor);
-        Descripcion.setText(unItem.getDescripcion());
+        campoDescripcion = (TextView) findViewById(R.id.id_nombre_descrip_valor);
+        campoDescripcion.setText(unItem.getDescripcion());
+
+        campoDudas = (TextView) findViewById(R.id.id_nombre_dudas_valor);
+        Log.i(LogUtils.tag, "Dudas: " + unItem.getDudas());
+        campoDudas.setText(unItem.getDudas());
     }
 
     @Override

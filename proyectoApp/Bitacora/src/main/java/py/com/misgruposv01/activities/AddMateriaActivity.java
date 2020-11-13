@@ -110,6 +110,7 @@ public class AddMateriaActivity extends Activity {
             Intent intent = new Intent();
             intent.putExtra("resultado", 10);
             setResult(RESULT_OK, intent);
+
             finish();
         }
     }

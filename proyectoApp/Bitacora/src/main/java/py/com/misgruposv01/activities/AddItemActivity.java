@@ -61,15 +61,11 @@ public class AddItemActivity extends AppCompatActivity {
 
 
     }
-
-
-    public void crearItem (View view) {
+    public void crearItem () {
         Log.i(LogUtils.tag, "METODO CREAR ITEM ");
         String concepto = campoConcepto.getText().toString();
         String descripcion = campoDescripcion.getText().toString();
         String dudas = campoDudas.getText().toString();
-        //Boolean aprendido = campoAprendido.get;
-
         if (concepto.equals("")|| descripcion.equals("")||dudas.equals("")){
             desplegarMensajeCamposRequeridos();
         }else{
@@ -79,10 +75,28 @@ public class AddItemActivity extends AppCompatActivity {
             Item item = new Item (concepto, descripcion, dudas, false);
             App.agregarItem(unTema, item);
             desplegarMensajeResgistroExitoso();
-            Log.i(LogUtils.tag, "Investigacion creada creado: "+ item.getConcepto());
+            Log.i(LogUtils.tag, "Item creado: "+item.getConcepto());
+            finish();
         }
+    }
 
-        finish();
+    public void crearItem (View view) {
+        Log.i(LogUtils.tag, "METODO CREAR ITEM ");
+        String concepto = campoConcepto.getText().toString();
+        String descripcion = campoDescripcion.getText().toString();
+        String dudas = campoDudas.getText().toString();
+        if (concepto.equals("")|| descripcion.equals("")||dudas.equals("")){
+            desplegarMensajeCamposRequeridos();
+        }else{
+            Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+            Materia unaMateria = App.buscarMateria(unaBitacora, idMateria);
+            Tema unTema = App.buscarTema(unaMateria, idTema);
+            Item item = new Item (concepto, descripcion, dudas, false);
+            App.agregarItem(unTema, item);
+            desplegarMensajeResgistroExitoso();
+            Log.i(LogUtils.tag, "Item creado: "+item.getConcepto());
+            finish();
+        }
     }
 
     public void desplegarMensajeCamposRequeridos() {
@@ -107,7 +121,7 @@ public class AddItemActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.item_guardar: {
                 Log.d(LogUtils.tag, "Item seleccionado: Guardar");
-  //              crearItem();
+               crearItem();
                 break;
             }case R.id.item_limpiar:{
                 Log.d(LogUtils.tag, "Item seleccionado: Limpiar");

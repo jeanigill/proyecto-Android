@@ -29,6 +29,7 @@ public class MateriaAdaptador extends BaseAdapter {
 
 	@Override
 	public View getView(int posicion, View vista, ViewGroup padre) {
+		//adapter.notifyIteminserted(posicion);
 		LayoutInflater inflater = actividad.getLayoutInflater();
 		View view = inflater.inflate(R.layout.elemento_materias, null, true);
 

@@ -80,7 +80,7 @@ public class App {
         investigaciones1.add(investigacion4);
 
         item1 = new Item ("Clase", "Modelo que define conjunto de atributos y métodos",
-                "", true);
+                "Ninguna duda", true);
         item2 = new Item ("Objeto", "\"Unidad dentro de un programa que tiene estado y comportamiento. \n" +
                 "Instancia de una clase\"",
                 "", true);
@@ -259,16 +259,16 @@ public class App {
         }
     }
 
-    public static void agregarItem (Tema tema, Item items) {
+    public static void agregarItem (Tema tema, Item item) {
         if (tema.getItems()==null){
             Log.i(LogUtils.tag, "No tiene items ");
-            ArrayList<Item> itemss = new ArrayList<>();
-            itemss.add(items);
-            tema.setItems(itemss);
+            ArrayList<Item> items = new ArrayList<>();
+            items.add(item);
+            tema.setItems(items);
         }else{
             Log.i(LogUtils.tag, "Tamaño de ArrayList Item antes: "+tema.getItems().size());
-            tema.getItems().add(items);
-            Log.i(LogUtils.tag, "Tema de la nueva Itme: "+ items.getConcepto());
+            tema.getItems().add(item);
+            Log.i(LogUtils.tag, "Tema del nuevo Item: "+ item.getConcepto());
             Log.i(LogUtils.tag, "Tamaño de ArrayList Item despues: "+tema.getItems().size());
         }
     }

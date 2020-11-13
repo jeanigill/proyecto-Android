@@ -21,6 +21,7 @@ import py.com.misgruposv01.utils.LogUtils;
 
 public class MateriasListView extends ListActivity {
 public int idBitacora;
+    Bitacora unaBitacora = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,18 +35,21 @@ public int idBitacora;
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
         }
 
-        Bitacora unaBitacora = App.buscarBitacora(idBitacora);
+         unaBitacora = App.buscarBitacora(idBitacora);
         if (unaBitacora.getMaterias() == null){
             Toast.makeText(this, "Todavía no hay materias registradas", Toast.LENGTH_SHORT).show();
 
         }else{
+
             setListAdapter(new MateriaAdaptador(this, unaBitacora.getMaterias()));
         }
     }
 
     @Override
     protected void onListItemClick (ListView l, View v, int position, long id) {
-        Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
+        int idInt = (int) id;
+        Materia materia = App.buscarMateria(unaBitacora, idInt);
+        Toast.makeText(this, "Click Materia: " +materia.getNombre() , Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, TemasListView.class);
         i.putExtra("idMateria", Integer.parseInt(""+id));

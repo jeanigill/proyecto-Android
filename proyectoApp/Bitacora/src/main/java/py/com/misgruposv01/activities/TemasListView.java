@@ -54,7 +54,9 @@ import py.com.misgruposv01.utils.LogUtils;
 
     @Override
     protected void onListItemClick (ListView l, View v, int position, long id) {
-        Toast.makeText(this, "Click en fila " + position+". Id: "+id, Toast.LENGTH_SHORT).show();
+        int idInt = (int) id;
+        Tema unTema = App.buscarTema(unaMateria, idInt);
+        Toast.makeText(this, "Click en Tema: " +unTema.getNombre(), Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this,MenuPrincipalActivity.class);
         i.putExtra("idBitacora", Integer.parseInt(""+idBitacora));
