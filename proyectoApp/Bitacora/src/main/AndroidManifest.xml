@@ -27,6 +27,7 @@
         <activity android:name=".activities.AddInvestigacionActivity" />
         <activity android:name=".activities.AddEjercicioActivity" />
         <activity android:name=".activities.AddTemaActivity" />
+        <activity android:name=".activities.VerDatosInvestigacionActivity" />
         <activity android:name=".activities.VerDatosEjerciciosActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>

@@ -71,7 +71,7 @@ public class VerDatosEjerciciosActivity extends AppCompatActivity {
         unEjercicio = unTema.getEjercicios().get(idEjercicio);
 
         if ( idEjercicio < 0 || idEjercicio > (unTema.getEjercicios().size()-1) ) {
-            desplegarMensajeNoExisteGrupo();
+            desplegarMensajeNoExisteEjercicio();
             finish();
             return;
         }
@@ -149,8 +149,8 @@ public class VerDatosEjerciciosActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void desplegarMensajeNoExisteGrupo() {
-        Toast toast = Toast.makeText( this, "El grupo no existe", Toast.LENGTH_SHORT);
+    public void desplegarMensajeNoExisteEjercicio() {
+        Toast toast = Toast.makeText( this, "El ejercicio no existe", Toast.LENGTH_SHORT);
         toast.show();
     }
 }

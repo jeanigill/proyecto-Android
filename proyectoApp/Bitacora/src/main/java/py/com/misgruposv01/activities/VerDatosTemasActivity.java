@@ -88,10 +88,10 @@ public class VerDatosTemasActivity extends AppCompatActivity {
 //        Descripcion.setText(unItem.getDescripcion());
 //    }
 
-//    public void desplegarMensajeNoExisteGrupo() {
-//        Toast toast = Toast.makeText( this, "El grupo no existe", Toast.LENGTH_SHORT);
-//        toast.show();
-//    }
+    public void desplegarMensajeNoExisteGrupo() {
+        Toast toast = Toast.makeText( this, "El grupo no existe", Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
 }
 

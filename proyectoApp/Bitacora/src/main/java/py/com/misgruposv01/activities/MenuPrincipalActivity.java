@@ -94,6 +94,28 @@ public class MenuPrincipalActivity extends Activity {
                 .show();
     }
 
+    public void lanzarVistaVerInvestigacion (View view){
+        final EditText entrada = new EditText(this);
+        entrada.setText("0");
+        new AlertDialog.Builder(this)
+                .setTitle("Selección de investigación")
+                .setMessage("Indica su id:")
+                .setView(entrada)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        int id = Integer.parseInt( entrada.getText().toString());
+                        Intent i = new Intent( MenuPrincipalActivity.this, VerDatosInvestigacionActivity.class);
+                        i.putExtra("idInvestigacion", id);
+                        i.putExtra("idBitacora", idBitacora);
+                        i.putExtra("idMateria", idMateria);
+                        i.putExtra("idTema", idTema);
+                        startActivity( i );
+                    }})
+                .setNegativeButton("Cancelar", null)
+                .show();
+    }
+
+
     public void lanzarVistaNew (View view){
         Intent i = new Intent(this, NewActivity.class);
         i.putExtra("idBitacora", idBitacora);

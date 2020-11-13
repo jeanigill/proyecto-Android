@@ -21,7 +21,7 @@
             android:layout_marginBottom="20dp"
             android:background="@color/verde_200"
             android:gravity="center"
-            android:text="INVESTIGACIONES"
+            android:text="INVESTIGACION"
             android:textSize="24dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/nombre_Concepto"
+            android:id="@+id/tiempo_dedicado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -40,7 +40,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/id_nombre_concepto_valor"
+            android:id="@+id/tiempo_dedicado_valor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -48,7 +48,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/nombre_Descrip"
+            android:id="@+id/tema_investigado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -56,7 +56,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/id_nombre_descrip_valor"
+            android:id="@+id/tema_investigado_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

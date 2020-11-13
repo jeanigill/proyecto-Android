@@ -1,9 +1,7 @@
 package py.com.misgruposv01.activities;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,29 +10,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import py.com.misgruposv01.R;
 import py.com.misgruposv01.datos.App;
 import py.com.misgruposv01.datos.Bitacora;
+import py.com.misgruposv01.datos.Ejercicio;
+import py.com.misgruposv01.datos.Investigacion;
 import py.com.misgruposv01.datos.Materia;
 import py.com.misgruposv01.datos.Tema;
-import py.com.misgruposv01.datos.Item;
 import py.com.misgruposv01.utils.LogUtils;
 import py.com.misgruposv01.utils.NotificationsUtils;
 
 // import py.com.misgruposv01.utils.NotificationsUtils;
 // import py.com.misgruposv01.utils.RequestCode;
 
-public class VerDatosTemasItemActivity extends AppCompatActivity {
-    private static final String TAG = "VerDatosGrupoActivity";
+public class VerDatosInvestigacionActivity extends AppCompatActivity {
+    private static final String TAG = "VerDatosInvestigacionActivity";
     private static final int PETICION_EDITAR_GRUPO = 1;
-    private int idItem = 1;
+    private int idInvestigacion = 1;
     private Bitacora unaBitacora = null;
     private Materia unaMateria = null;
     private Tema unTema = null;
-    private Item unItem = null;
-    private TextView Concepto;
-    private TextView Descripcion;
-    private TextView Dudas;
+    private Investigacion unaInvestigacion = null;
+    private TextView tiempoD;
+    private TextView temaInvestigado;
+    private TextView comentarios;
+    private TextView nivelComp;
+    private TextView dudas;
     int idMateria = 0;
     int idBitacora = 0;
     int idTema = 0;
@@ -42,20 +44,22 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(LogUtils.tag, "Inicia metodo en VerDatosTemasItemActivity.onCreate");
-        setContentView(R.layout.fragment_item);
+        Log.i(LogUtils.tag, "Inicia metodo en VerDatosInvestigacionActivity.onCreate");
+        setContentView(R.layout.fragment_investigacion);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             idMateria = extras.getInt("idMateria", -1);
             idBitacora = extras.getInt("idBitacora", -1);
-            idItem = extras.getInt("idItem", -1);
+            idInvestigacion = extras.getInt("idInvestigacion", -1);
             idTema = extras.getInt("idTema", -1);
             Log.i(LogUtils.tag, "Id recibido de la bitacora: " + idBitacora);
             Log.i(LogUtils.tag, "Id recibido de la materia: " + idMateria);
             Log.i(LogUtils.tag, "Id recibido del Tema: "+ idTema);
-            Log.i(LogUtils.tag, "Id recibido del item: "+ idItem);
+            Log.i(LogUtils.tag, "Id recibido de la investigacion: "+ idInvestigacion);
 
+        }else{
+            Log.i(LogUtils.tag, "Extras es null en ver Datos Investigacion: ");
         }
 
       actualizarVista();
@@ -65,19 +69,31 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
         unaBitacora = App.buscarBitacora(idBitacora);
         unaMateria = App.buscarMateria(unaBitacora, idMateria);
         unTema = App.buscarTema(unaMateria, idTema);
-        unItem = unTema.getItems().get(idItem);
+        unaInvestigacion = unTema.getInvestigaciones().get(idInvestigacion);
 
-        if ( idItem < 0 || idItem > (unTema.getItems().size()-1) ) {
-            desplegarMensajeNoExisteItem();
+        if ( idInvestigacion < 0 || idInvestigacion > (unTema.getInvestigaciones().size()-1) ) {
+            desplegarMensajeNoExisteInvestigacion();
             finish();
             return;
         }
 
-        Concepto = (TextView) findViewById(R.id.id_nombre_concepto_valor);
-        Concepto.setText( unItem.getConcepto());
+        tiempoD = (TextView) findViewById(R.id.tiempo_dedicado_valor);
+        String tiempoDS = String.valueOf(unaInvestigacion.getTiempoDedicado());
+        tiempoD.setText( tiempoDS);
 
-        Descripcion = (TextView) findViewById(R.id.id_nombre_descrip_valor);
-        Descripcion.setText(unItem.getDescripcion());
+        temaInvestigado = (TextView) findViewById(R.id.tema_investigado_valor);
+        temaInvestigado.setText(unaInvestigacion.getTema());
+
+        comentarios = (TextView) findViewById(R.id.id_nombre_comentarios_valor);
+        comentarios.setText(unaInvestigacion.getComentarios());
+
+        nivelComp = (TextView) findViewById(R.id.id_nombre_comprension_valor);
+        String nivelCS = String.valueOf(unaInvestigacion.getComprension());
+        nivelComp.setText(nivelCS);
+
+        dudas = (TextView) findViewById(R.id.id_nombre_dudas_inves_valor);
+        dudas.setText( unaInvestigacion.getDudas());
+
     }
 
     @Override
@@ -94,12 +110,12 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
                 break;
             }
             case R.id.eliminar_grupo:{
-                unTema.getItems().remove(unItem);
-                desplegarMensajeEliminacionItem();
+                unTema.getEjercicios().remove(unaInvestigacion);
+                desplegarMensajeEliminacionInvestigacion();
                  finish();
               break;
           }case R.id.accion_sigte_tar:{
-            Log.d(LogUtils.tag, "Item seleccionado: Siguiente");
+            Log.d(LogUtils.tag, "Investigacion seleccionada: Siguiente");
                 opcionSiguiente();
           }
 
@@ -108,13 +124,13 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
      }
 
     public void opcionSiguiente(){
-        idItem++;
-        if(idItem < unTema.getItems().size()){
-            unItem = unTema.getItems().get(idItem);
+        idInvestigacion++;
+        if(idInvestigacion < unTema.getInvestigaciones().size()){
+            unaInvestigacion = unTema.getInvestigaciones().get(idInvestigacion);
             actualizarVista();
         }else{
             Context contexto = getApplicationContext();
-            NotificationsUtils.desplegarMensaje("Ya no existen items en la lista", contexto);
+            NotificationsUtils.desplegarMensaje("Ya no existen investigaciones en la lista", contexto);
         }
 
     }
@@ -126,8 +142,8 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
     //    }
 
 
-    public void desplegarMensajeEliminacionItem() {
-        Toast toast = Toast.makeText( this, "El item fue eliminado", Toast.LENGTH_SHORT);
+    public void desplegarMensajeEliminacionInvestigacion() {
+        Toast toast = Toast.makeText( this, "La investigacion fue eliminado", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -136,8 +152,8 @@ public class VerDatosTemasItemActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void desplegarMensajeNoExisteItem() {
-        Toast toast = Toast.makeText( this, "El item no existe", Toast.LENGTH_SHORT);
+    public void desplegarMensajeNoExisteInvestigacion() {
+        Toast toast = Toast.makeText( this, "La investigación no existe", Toast.LENGTH_SHORT);
         toast.show();
     }
 }

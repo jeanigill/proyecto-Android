@@ -38,6 +38,7 @@
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="76dp"
+            android:onClick="lanzarVistaVerInvestigacion"
             android:text="Ver Investigación"
             android:textSize="25dp" />
 
