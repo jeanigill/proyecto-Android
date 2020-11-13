@@ -8,6 +8,26 @@
     tools:context=".activities.AddInvestigacionActivity">
 
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="51dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-3dp"
+        android:background="@color/verde_200" />
+
     <EditText
         android:id="@+id/crear_tiempodedi_inves"
         android:layout_width="354dp"
@@ -68,10 +88,12 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:accessibilityPaneTitle="Crear Materia"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-6dp"
+        android:accessibilityPaneTitle="Crear Investigacion"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary" />
@@ -95,14 +117,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="250dp"
+        android:layout_width="299dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="2dp"
-        android:text="Crear Investigación"
-        android:textSize="26dp" />
+        android:layout_marginTop="9dp"
+        android:text="CREAR INVESTIGACIÓN"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="26dp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

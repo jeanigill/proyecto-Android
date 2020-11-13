@@ -49,6 +49,14 @@ public class NewActivity extends Activity {
 
     }
 
+    public void lanzarVistaDeAddItem (View view){
+        Intent i = new Intent ( this, AddItemActivity.class);
+        i.putExtra("idBitacora", idBitacora);
+        i.putExtra("idMateria", idMateria);
+        i.putExtra("idTema", idTema);
+        startActivity(i);
+    }
+
     public void lanzarVistaDeAddEjercicio (View view){
         Intent i = new Intent ( this, AddEjercicioActivity.class);
         i.putExtra("idBitacora", idBitacora);

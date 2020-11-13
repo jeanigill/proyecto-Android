@@ -5,6 +5,8 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -112,6 +114,29 @@ public class AddMateriaActivity extends Activity {
         }
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.crear_menu_compartir, menu);
+        //return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.item_guardar: {
+                Log.d(LogUtils.tag, "Item seleccionado: Guardar");
+  //              crearMateria ();
+                break;
+            }case R.id.item_limpiar:{
+                Log.d(LogUtils.tag, "Item seleccionado: Limpiar");
+                limpiarCampos();
+            }
+        }
+        return true;
+    }
+
     ///// TOAST //////
     public void mensajeMateriaCreada(Materia materia) {
         Toast toast = Toast.makeText(this, "Materia creada", Toast.LENGTH_SHORT);
@@ -128,6 +153,12 @@ public class AddMateriaActivity extends Activity {
         Toast toast = Toast.makeText( this, "La carga fue cancelada", Toast.LENGTH_SHORT);
         toast.show();
     }
+
+    public void limpiarCampos(){
+        campoNombreMateria.setText("");
+        campoId.setText("");
+    }
+
 
     public void lanzarVistaVolver (View view){
         Intent i = new Intent(this, MateriasListView.class);

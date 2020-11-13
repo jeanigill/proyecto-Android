@@ -259,6 +259,20 @@ public class App {
         }
     }
 
+    public static void agregarItem (Tema tema, Item items) {
+        if (tema.getItems()==null){
+            Log.i(LogUtils.tag, "No tiene items ");
+            ArrayList<Item> itemss = new ArrayList<>();
+            itemss.add(items);
+            tema.setItems(itemss);
+        }else{
+            Log.i(LogUtils.tag, "Tamaño de ArrayList Item antes: "+tema.getItems().size());
+            tema.getItems().add(items);
+            Log.i(LogUtils.tag, "Tema de la nueva Itme: "+ items.getConcepto());
+            Log.i(LogUtils.tag, "Tamaño de ArrayList Item despues: "+tema.getItems().size());
+        }
+    }
+
     public static ArrayList<Bitacora> getListadoBitacoras() {
         return listadoBitacoras;
     }
