@@ -7,6 +7,16 @@
     >
 
     <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-3dp"
+        android:background="@color/verde_200" />
+
+    <TextView
         android:id="@+id/crear_cuenta_titulo2"
         android:layout_width="match_parent"
         android:layout_height="61dp"
